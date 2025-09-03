@@ -71,6 +71,26 @@ page 50105 MyCustomerRoleCenter
                     RunObject = PAGE "Technician List";
                 }
             }
+
+             group("Asset Management")
+            {
+                action("Asset Type")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Asset Type";
+                }
+                action("Asset List")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Asset Type";
+                }
+
+                action("Employee List")
+                {
+                    ApplicationArea = all;
+                    runobject = Page "Employee entry List";
+                }
+            }
         }
     }
 }

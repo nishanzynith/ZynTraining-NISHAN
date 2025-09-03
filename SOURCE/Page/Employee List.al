@@ -6,7 +6,6 @@ page 50139 "Employee entry List"
     UsageCategory = Lists;
     Caption = 'Employees List';
     CardPageId = "Employee Card new";
-    Editable = false;
 
     layout
     {
@@ -14,6 +13,7 @@ page 50139 "Employee entry List"
         {
             repeater(Group)
             {
+                Editable = false;
                 field("Emp ID"; Rec."Emp ID")
                 {
                     ApplicationArea = All;
@@ -36,6 +36,14 @@ page 50139 "Employee entry List"
                     ApplicationArea = All;
                     DrillDown = true;
                 }
+            }
+        }
+
+        area(FactBoxes)
+        {
+            part(HistoryCount; "Employee Asset History CueCard")
+            {
+                SubPageLink = "Employee ID" = FIELD("Emp ID");
             }
         }
     }
