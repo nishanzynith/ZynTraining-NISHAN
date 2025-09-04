@@ -2,7 +2,7 @@ page 50105 MyCustomerRoleCenter
 {
     PageType = RoleCenter;
     ApplicationArea = All;
-    UsageCategory = Administration; // Optional - controls where it shows in menus
+    UsageCategory = Administration; 
     Caption = 'Customer Role Center';
 
     layout
@@ -85,10 +85,76 @@ page 50105 MyCustomerRoleCenter
                     RunObject = Page "Asset Type";
                 }
 
-                action("Employee List")
+                action("EmployeeList")
                 {
                     ApplicationArea = all;
-                    runobject = Page "Employee entry List";
+                    Runobject = Page "Employee entry List";
+                }
+
+                action("Employee Asset List")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Employee Assets";
+                }
+            }
+
+            group("Expense Management")
+            {
+                action("Expense Category")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Expense Category List";
+                }
+
+                action("Expense List")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Expense List";
+                }
+
+                action("Recurring Expense")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Recurring Expense";
+                }
+
+                action("Budget List")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Budget List";
+                }
+
+                action("Income List")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Income List";
+                }
+
+                action("Income category")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Income Category List";
+                }
+            }
+
+            group("Leave Management")
+            {
+                action("Leave Request List")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Leave Request List";
+                }
+
+                action("Employee List")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Employee entry List";
+                }
+
+                action("Leave Category")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Leave Category List";
                 }
             }
         }
