@@ -157,6 +157,22 @@ page 50105 MyCustomerRoleCenter
                     RunObject = Page "Leave Category List";
                 }
             }
+
+            group("Assesment")
+            {
+                action("Plan List")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Plan List";
+                }
+
+                action("Subscription")
+                {
+                    ApplicationArea = All;
+                    RunObject = Page "Subscription List";
+                }
+
+            }
         }
     }
 }
