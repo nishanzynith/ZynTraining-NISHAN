@@ -24,7 +24,7 @@ page 50170 "Subscription Card"
             group(Notification)
             {
                 field("Next Renewal Date"; Rec."Next Renewal Date") { }
-                field("Reminder Sent"; Rec."Reminder Sent") { }
+                field("Reminder Sent"; Rec."Reminder Sent") {Editable= false; }
             }
         }
     }

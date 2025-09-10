@@ -11,12 +11,11 @@ codeunit 50109 "subscription expiry checker"
         subplan: Record "Subscription Plans Table";
         TargetDate: Date;
     begin
-        TargetDate := CalcDate('<+15D>', WorkDate());
         subplan.Reset();
         subplan.SetRange(subplan.Status, subplan.Status::Active);
         if subplan.FindSet() then
             repeat
-            if SubPlan."End Date" = TargetDate then begin
+            if SubPlan."End Date" = CalcDate('<+15D>', WorkDate()) then begin
                 NotifyExpiry(subplan."Subscription ID", subplan."End Date");
                 subplan."Reminder Sent" := true;
                 subplan.Modify();
