@@ -12,11 +12,4 @@ pageextension 50140 "Customer list factbox" extends "Customer List"
         }
     }
     
-    actions
-    {
-        // Add changes to page actions here
-    }
-    
-    var
-        myInt: Integer;
 }

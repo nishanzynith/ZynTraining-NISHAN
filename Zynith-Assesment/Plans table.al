@@ -23,16 +23,6 @@ table 50117 "Plans Table"
         field(4; "Plan Status"; enum "Plans status Enum")
         {
             DataClassification = ToBeClassified;
-
-
-            // trigger OnValidate()
-            // begin
-            //     if Rec."Plan Status" = Rec."Plan Status"::Inactive then begin
-            //         DeactivateSubscriptions(Rec."Plan ID");
-            //     end;
-            // end;
-
-
         }
 
         field(5; Description; Text[250])
@@ -49,10 +39,6 @@ table 50117 "Plans Table"
         }
     }
 
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
 
     var
         myInt: Integer;
@@ -73,11 +59,6 @@ table 50117 "Plans Table"
     end;
 
 
-    trigger OnModify()
-    begin
-
-    end;
-
     trigger OnDelete()
     var
         Subscription: Record "Subscription Plans Table";
@@ -91,12 +72,6 @@ table 50117 "Plans Table"
                 Subscription.Modify();
             until Subscription.Next() = 0;
         end;
-    end;
-
-
-    trigger OnRename()
-    begin
-
     end;
 
     procedure DeactivateSubscriptions(PlanId: Code[20])

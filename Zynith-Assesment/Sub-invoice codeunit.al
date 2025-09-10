@@ -61,4 +61,5 @@ codeunit 50108 "Subscription Billing"
         Subscription."Next Billing Date" := CalcDate('<1M>', Subscription."Next Billing Date");
         Subscription.Modify();
     end;
+    
 }

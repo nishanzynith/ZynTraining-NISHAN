@@ -11,4 +11,5 @@ enum 50109 "Plans status Enum"
     {
         Caption = 'Inactive';
     }
+    
 }

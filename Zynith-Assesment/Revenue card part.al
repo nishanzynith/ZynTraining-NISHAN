@@ -27,7 +27,7 @@ page 50172 "Revenue Cue"
 
                         SalesInv.SetFilter("No.", '*SUBINV*');
                         SalesInv.SetRange("Document Date", DMY2Date(1, WorkMonth, WorkYear),
-                                   DMY2Date(31, WorkMonth, WorkYear));
+                                   CalcDate('<CM>', WorkDate()));
                         PAGE.Run(PAGE::"Sales Invoice List", SalesInv);
                     end;
                 }
@@ -53,7 +53,7 @@ page 50172 "Revenue Cue"
         sales.Reset();
         sales.SetRange("From Subscription", true);
         Sales.SetRange("Document Date", DMY2Date(1, WorkMonth, WorkYear),
-                                    DMY2Date(31, WorkMonth, WorkYear));
+                                    CalcDate('<CM>', WorkDate()));
         if sales.FindSet() then begin
             repeat
                 sales.CalcFields(Amount);
@@ -62,6 +62,5 @@ page 50172 "Revenue Cue"
         end;
         exit(totamount)
     end;
-
 
 }

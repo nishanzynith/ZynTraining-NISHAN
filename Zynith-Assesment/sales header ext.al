@@ -25,17 +25,4 @@ tableextension 50102 "Sales Inv Header extenstion" extends "Sales Header"
             DataClassification = ToBeClassified;
         }
     }
-    
-    keys
-    {
-        // Add changes to keys here
-    }
-    
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
-    
-    var
-        myInt: Integer;
 }

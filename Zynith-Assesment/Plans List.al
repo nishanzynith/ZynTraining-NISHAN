@@ -21,10 +21,7 @@ page 50167 "Plan List"
 
             }
         }
-        area(Factboxes)
-        {
-            
-        }
+
     }
     
     actions

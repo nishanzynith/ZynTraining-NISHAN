@@ -9,18 +9,11 @@ pageextension 50139 "Role Center Subscription Ext" extends MyCustomerRoleCenter
                 ApplicationArea = All;
             }
 
-            part("Revenue Generated";"Revenue Cue")
+            part("Revenue Generated"; "Revenue Cue")
             {
                 ApplicationArea = All;
             }
         }
     }
-    
-    actions
-    {
-        // Add changes to page actions here
-    }
-    
-    var
-        myInt: Integer;
+
 }

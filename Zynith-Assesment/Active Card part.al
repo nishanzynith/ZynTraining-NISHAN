@@ -12,7 +12,7 @@ page 50171 "Subscription Cue"
             {
                 Caption = 'Subscriptions';
 
-                field("Active Subscriptions"; ActiveSubsCount) 
+                field("Active Subscriptions"; ActiveSubsCount)
                 {
                     ApplicationArea = All;
                     DrillDownPageId = "Subscription List";
@@ -31,12 +31,14 @@ page 50171 "Subscription Cue"
     }
 
     var
-        ActiveSubsCount: Integer;  
+        ActiveSubsCount: Integer;
         Subscription: Record "Subscription Plans Table";
 
     trigger OnOpenPage()
+
     begin
         ActiveSubsCount := CountActiveSubscriptions();
+
     end;
 
     local procedure CountActiveSubscriptions(): Integer
@@ -44,6 +46,14 @@ page 50171 "Subscription Cue"
         Subscription.Reset();
         Subscription.SetRange(Status, Subscription.Status::Active);
         exit(Subscription.Count());
+    end;
+
+    trigger OnAfterGetRecord()
+    var
+        SubsChecker: Codeunit "subscription expiry checker";
+    begin
+        SubsChecker.CheckAndNotify();
+        
     end;
 }
 

@@ -24,6 +24,7 @@ page 50173 "Active Subscriptions List part"
                 {
                     ApplicationArea = All;
                 }
+                
             }
         }
     }

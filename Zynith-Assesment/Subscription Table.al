@@ -48,11 +48,10 @@ table 50118 "Subscription Plans Table"
             begin
                 StartDate := Rec."Start Date";
 
-                if StartDate <> 0D then 
-                begin
-                    Rec."End Date" := CalcDate(StrSubstNo('<%1M>',"Duration (Months)"), StartDate);
-                end else 
-                begin                   
+                if StartDate <> 0D then begin
+                    Rec."End Date" := CalcDate(StrSubstNo('<%1M>', "Duration (Months)"), StartDate);
+                    rec.Modify();
+                end else begin
                     Rec."End Date" := 0D;
                 end;
             end;
@@ -73,6 +72,23 @@ table 50118 "Subscription Plans Table"
         {
             DataClassification = SystemMetadata;
 
+        }
+
+        field(9; "Next Renewal Date"; Date)
+        {
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                if "Next Renewal Date" < "End Date" then begin
+                    Error('The next renewal date should be more than the end date !!');
+                end;
+            end;
+        }
+
+        field(10; "Reminder Sent"; Boolean)
+        {
+            DataClassification = SystemMetadata;
         }
     }
 
@@ -105,21 +121,6 @@ table 50118 "Subscription Plans Table"
 
             "Subscription ID" := 'S' + Format(LastId + 1);
         end;
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
     end;
 
 }

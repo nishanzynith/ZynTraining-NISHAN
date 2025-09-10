@@ -29,12 +29,4 @@ pageextension 50138 "Sales Invoice Ext" extends "Sales Invoice"
             }
         }
     }
-    
-    actions
-    {
-        // Add changes to page actions here
-    }
-    
-    var
-        myInt: Integer;
 }
