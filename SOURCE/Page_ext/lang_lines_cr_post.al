@@ -1,4 +1,4 @@
-pageextension 50130 "posted credit Page Ext" extends "Posted Sales Credit Memo"
+pageextension 50130 "Zyn_Posted Credit Page Ext" extends "Posted Sales Credit Memo"
 {
     layout
     {
@@ -7,10 +7,10 @@ pageextension 50130 "posted credit Page Ext" extends "Posted Sales Credit Memo"
             field("Beginning Text Code"; Rec."Beginning Text Code")
             {
                 ApplicationArea = All;
-                TableRelation = "Beginning Text Line".begintextcode;
+                TableRelation = "Zyn_Beginning Text Line".begintextcode;
                 Editable = false;
             }
-            part("Posted Beginning Text Subpage"; "Posted Beginning Text")
+            part("Posted Beginning Text Subpage"; "Zyn_Posted Beginning Text")
             {
                 SubPageLink = "document_no." = FIELD("No."),
                 Selection = const(Zyn_Selection::Begining);
@@ -21,10 +21,10 @@ pageextension 50130 "posted credit Page Ext" extends "Posted Sales Credit Memo"
             field("Ending Text Code"; rec."Ending Text code")
             {
                 ApplicationArea = All;
-                TableRelation = "Beginning Text Line"."ending text";
+                TableRelation = "Zyn_Beginning Text Line"."ending text";
                 Editable = false;
             }
-            part("Posted ending Text Subpage"; "Posted Ending Text")
+            part("Posted ending Text Subpage"; "Zyn_Posted Ending Text")
             {
                 SubPageLink = "document_no." = FIELD("No."),
                 Selection = const(Zyn_Selection::Ending);

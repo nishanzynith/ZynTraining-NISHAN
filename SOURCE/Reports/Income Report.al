@@ -49,7 +49,7 @@ report 50104 "Zyn_Income Tracker Report"
                     {
                         ApplicationArea = All;
                         Caption = 'Category';
-                        TableRelation = "Income Category"."Code";
+                        TableRelation = "Zyn_Income Category"."Code";
                     }
                 }
             }

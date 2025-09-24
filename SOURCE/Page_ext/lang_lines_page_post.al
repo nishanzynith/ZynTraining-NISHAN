@@ -1,4 +1,4 @@
-pageextension 50124 "posted Invoice Page Ext" extends "Posted Sales Invoice"
+pageextension 50124 "Zyn_Posted Invoice Page Ext" extends "Posted Sales Invoice"
 {
     layout
     {
@@ -7,10 +7,10 @@ pageextension 50124 "posted Invoice Page Ext" extends "Posted Sales Invoice"
             field("Beginning Text Code"; Rec."Invoice beginning Text code")
             {
                 ApplicationArea = All;
-                TableRelation = "Beginning Text Line".begintextcode;
+                TableRelation = "Zyn_Beginning Text Line".begintextcode;
                 Editable = false;
             }
-            part("Posted Beginning Text Subpage"; "Posted Beginning Text")
+            part("Posted Beginning Text Subpage"; "Zyn_Posted Beginning Text")
             {
                 SubPageLink = "document_no." = FIELD("No."),
                 Document_type = const("Posted"),
@@ -22,10 +22,10 @@ pageextension 50124 "posted Invoice Page Ext" extends "Posted Sales Invoice"
             field("Ending Text Code"; rec."invoice ending Text code")
             {
                 ApplicationArea = All;
-                TableRelation = "Beginning Text Line"."ending text";
+                TableRelation = "Zyn_Beginning Text Line"."ending text";
                 Editable = false;
             }
-            part("Posted ending Text Subpage"; "Posted Ending Text")
+            part("Posted ending Text Subpage"; "Zyn_Posted Ending Text")
             {
                 SubPageLink = "document_no." = FIELD("No."),
                 Document_type = const("Posted"),

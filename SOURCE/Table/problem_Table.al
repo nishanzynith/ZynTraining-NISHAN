@@ -1,4 +1,4 @@
-table 50107 "Customer Problem"
+table 50107 "Zyn_Customer Problem"
 {
     DataClassification = CustomerContent;
 
@@ -27,7 +27,7 @@ table 50107 "Customer Problem"
         field(5; Technician; Text[80])
         {
             DataClassification = ToBeClassified;
-            TableRelation = Technician_table."Tech ID" where(department = field(Department));
+            TableRelation = "Zyn_Technician Table"."Tech ID" where(department = field(Department));
         }
 
         field(6; "Problem Description"; Text[250])

@@ -1,5 +1,5 @@
 
-codeunit 50115 compchangepublisher
+codeunit 50115 Zyn_CompanyChangePub
 {
     [IntegrationEvent(false, false)]
     procedure onaddcustomercreated("customer rec": Record Customer)
@@ -8,9 +8,9 @@ codeunit 50115 compchangepublisher
     end;
 }
 
-codeunit 50116 compchangesubs
+codeunit 50116 Zyn_CompanyChangeSub
 {
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::compchangepublisher, 'onaddcustomercreated', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::Zyn_CompanyChangePub, 'onaddcustomercreated', '', false, false)]
     local procedure OnCustomerCreated("customer rec": Record Customer)
     var
         TargetCustomer: Record Customer;
@@ -30,7 +30,7 @@ codeunit 50116 compchangesubs
     end;
 }
 
-codeunit 50100 "Loyalty Points Handler"
+codeunit 50100 "Zyn_Loyalty Points Handler"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterPostSalesDoc', '', false, false)]
     local procedure AddLoyaltyPoints(
@@ -62,7 +62,7 @@ codeunit 50100 "Loyalty Points Handler"
     end;
 }
 
-codeunit 50101 "Loyalty Points PreCheck"
+codeunit 50101 "Zyn_Loyalty Points PreCheck"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforePostSalesDoc', '', false, false)]
     local procedure PreventPosting(

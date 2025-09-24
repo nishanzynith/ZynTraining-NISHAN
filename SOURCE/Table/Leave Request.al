@@ -1,4 +1,4 @@
-table 50109 "Leave Request"
+table 50109 "Zyn_Leave Request"
 {
     DataClassification = ToBeClassified;
 
@@ -13,14 +13,14 @@ table 50109 "Leave Request"
         field(2; "Employee ID"; code[10])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Employee Table"."Emp ID";
+            TableRelation = "Zyn_Employee Table"."Emp ID";
 
         }
 
         field(3; "Leave Category"; Text[200])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Leave Category"."Category Name";
+            TableRelation = "Zyn_Leave Category"."Category Name";
 
         }
 

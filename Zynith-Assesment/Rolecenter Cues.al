@@ -1,4 +1,4 @@
-pageextension 50139 "Role Center Subscription Ext" extends MyCustomerRoleCenter
+pageextension 50139 "Role Center Subscription Ext" extends "Zyn_Custom RoleCenter"
 {
     layout
     {

@@ -1,4 +1,4 @@
-pageextension 50112 Updatefield extends Companies
+pageextension 50112 "Zyn_Companies Extension" extends Companies
 {
     layout { }
     actions
@@ -14,7 +14,7 @@ pageextension 50112 Updatefield extends Companies
                 Image = UpdateDescription;
                 trigger OnAction()
                 begin
-                    Page.RunModal(PAGE::UpdatePage)
+                    Page.RunModal(PAGE::Zyn_UpdatePage)
                 end;
             }
 

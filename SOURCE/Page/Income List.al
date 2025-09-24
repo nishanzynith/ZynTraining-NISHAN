@@ -1,10 +1,10 @@
-page 50143 "Income List"
+page 50143 "Zyn_Income List"
 {
     PageType = List;
     ApplicationArea = All;
     SourceTable = "Income Entry";
     Caption = 'Income List';
-    CardPageId = "Income Card";
+    CardPageId = "Zyn_Income Card";
     UsageCategory = Lists;
 
     layout
@@ -47,7 +47,7 @@ page 50143 "Income List"
                 ApplicationArea = All;
                 Caption = 'Income Categories';
                 Image = Category;
-                RunObject = Page "Income Category List";
+                RunObject = Page "Zyn_Income Category List";
             }
             action(GenerateIncomeReport)
             {

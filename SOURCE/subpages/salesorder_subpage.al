@@ -1,4 +1,4 @@
-page 50111 "Customer Sales Orders"
+page 50111 "Zyn_Customer Sales Orders"
 {
     PageType = ListPart;
     SourceTable = "Sales Header";

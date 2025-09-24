@@ -1,11 +1,11 @@
-page 50139 "Employee entry List"
+page 50139 "Zyn_Employee Entry List Page"
 {
     PageType = List;
-    SourceTable = "Employee Table";
+    SourceTable = "Zyn_Employee Table";
     ApplicationArea = All;
     UsageCategory = Lists;
     Caption = 'Employees List';
-    CardPageId = "Employee Card new";
+    CardPageId = "Zyn_Employee Card Page";
 
     layout
     {

@@ -1,7 +1,7 @@
-page 50117 "Technician Card"
+page 50117 "Zyn_Technician Card"
 {
     PageType = Card;
-    SourceTable = Technician_table;
+    SourceTable = "Zyn_Technician Table";
     ApplicationArea = All;
 
     layout
@@ -17,8 +17,8 @@ page 50117 "Technician Card"
                 field("Ph. No."; rec."Phone Number")
                 { }
                 field("Department"; Rec.department)
-                { 
-                    
+                {
+
                 }
             }
         }

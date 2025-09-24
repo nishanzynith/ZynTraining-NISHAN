@@ -1,4 +1,4 @@
-page 50108 CustomerCountCue
+page 50108 "Zyn_Customer Count Cue"
 {
     PageType = CardPart;
     ApplicationArea = All;

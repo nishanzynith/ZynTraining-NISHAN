@@ -1,7 +1,7 @@
-page 50153 "Expense Category List"
+page 50153 "Zyn_Expense Category List Page"
 {
     PageType = List;
-    SourceTable = "Expense Category";
+    SourceTable = "Zyn_Expense Category";
     Caption = 'Expense Category List';
     ApplicationArea = All;
 
@@ -11,21 +11,21 @@ page 50153 "Expense Category List"
         {
             repeater(Group)
             {
-                field(Code; rec.Code){}
-                field(Description; rec.Description){}
+                field(Code; rec.Code) { }
+                field(Description; rec.Description) { }
             }
         }
-    
+
 
         area(FactBoxes)
         {
-            part(ExpenseFactbox; "Expense & Budget Factbox")
+            part(ExpenseFactbox; "Zyn_Expense & Budget Factbox")
             {
                 SubPageLink = "Code" = FIELD("Code");
                 ApplicationArea = All;
             }
         }
-        
+
     }
 }
 

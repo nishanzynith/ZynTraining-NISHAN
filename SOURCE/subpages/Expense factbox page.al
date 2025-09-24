@@ -1,7 +1,7 @@
-page 50154 "Expense & Budget Factbox"
+page 50154 "Zyn_Expense & Budget Factbox"
 {
     PageType = CardPart;
-    SourceTable = "Expense Category";
+    SourceTable = "Zyn_Expense Category";
     ApplicationArea = All;
     Caption = 'Expense and Budget Factbox';
 
@@ -28,7 +28,7 @@ page 50154 "Expense & Budget Factbox"
                         Calculator.GetThisMonthDates(StartDate, EndDate);
                         Expense.SetRange(Category, Rec.Code);
                         Expense.SetRange(Date, StartDate, EndDate);
-                        Page.Run(Page::"Expense List", Expense);
+                        Page.Run(Page::"Zyn_Expense List", Expense);
                     end;
                 }
 
@@ -47,7 +47,7 @@ page 50154 "Expense & Budget Factbox"
                         Calculator.GetThisQuarterDates(StartDate, EndDate);
                         Expense.SetRange(Category, Rec.Code);
                         Expense.SetRange(Date, StartDate, EndDate);
-                        Page.Run(Page::"Expense List", Expense);
+                        Page.Run(Page::"Zyn_Expense List", Expense);
                     end;
                 }
 
@@ -66,7 +66,7 @@ page 50154 "Expense & Budget Factbox"
                         Calculator.GetThisHalfYearDates(StartDate, EndDate);
                         Expense.SetRange(Category, Rec.Code);
                         Expense.SetRange(Date, StartDate, EndDate);
-                        Page.Run(Page::"Expense List", Expense);
+                        Page.Run(Page::"Zyn_Expense List", Expense);
                     end;
                 }
 
@@ -85,7 +85,7 @@ page 50154 "Expense & Budget Factbox"
                         Calculator.GetThisYearDates(StartDate, EndDate);
                         Expense.SetRange(Category, Rec.Code);
                         Expense.SetRange(Date, StartDate, EndDate);
-                        Page.Run(Page::"Expense List", Expense);
+                        Page.Run(Page::"Zyn_Expense List", Expense);
                     end;
                 }
             }
@@ -102,14 +102,14 @@ page 50154 "Expense & Budget Factbox"
 
                     trigger OnDrillDown()
                     var
-                        Budget: Record "BudgetEntry";
+                        Budget: Record "Zyn_Budget Entry";
                         StartDate: Date;
                         EndDate: Date;
                     begin
                         Calculator.GetThisMonthDates(StartDate, EndDate);
                         Budget.SetRange("Expense Category", Rec.Code);
                         Budget.SetRange("FromDate", StartDate, EndDate);
-                        Page.Run(Page::"Budget List", Budget);
+                        Page.Run(Page::"Zyn_Budget List Page", Budget);
                     end;
                 }
 
@@ -121,14 +121,14 @@ page 50154 "Expense & Budget Factbox"
 
                     trigger OnDrillDown()
                     var
-                        Budget: Record "BudgetEntry";
+                        Budget: Record "Zyn_Budget Entry";
                         StartDate: Date;
                         EndDate: Date;
                     begin
                         Calculator.GetThisQuarterDates(StartDate, EndDate);
                         Budget.SetRange("Expense Category", Rec.Code);
                         Budget.SetRange(fromdate, StartDate, EndDate);
-                        Page.Run(Page::"Budget List", Budget);
+                        Page.Run(Page::"Zyn_Budget List Page", Budget);
                     end;
                 }
 
@@ -140,14 +140,14 @@ page 50154 "Expense & Budget Factbox"
 
                     trigger OnDrillDown()
                     var
-                        Budget: Record Budgetentry;
+                        Budget: Record "Zyn_Budget Entry";
                         StartDate: Date;
                         EndDate: Date;
                     begin
                         Calculator.GetThisHalfYearDates(StartDate, EndDate);
                         Budget.SetRange("Expense Category", Rec.Code);
                         Budget.SetRange(fromdate, StartDate, EndDate);
-                        Page.Run(Page::"Budget List", Budget);
+                        Page.Run(Page::"Zyn_Budget List Page", Budget);
                     end;
                 }
 
@@ -159,14 +159,14 @@ page 50154 "Expense & Budget Factbox"
 
                     trigger OnDrillDown()
                     var
-                        Budget: Record "BudgetEntry";
+                        Budget: Record "Zyn_Budget Entry";
                         StartDate: Date;
                         EndDate: Date;
                     begin
                         Calculator.GetThisYearDates(StartDate, EndDate);
                         Budget.SetRange("Expense Category", Rec.Code);
                         Budget.SetRange("FromDate", StartDate, EndDate);
-                        Page.Run(Page::"Budget List", Budget);
+                        Page.Run(Page::"Zyn_Budget List Page", Budget);
                     end;
                 }
             }

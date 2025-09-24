@@ -1,11 +1,11 @@
-page 50152 "Expense List"
+page 50152 "Zyn_Expense List"
 {
     PageType = List;
     SourceTable = "Expense Entry";
     Caption = 'Expense List';
     ApplicationArea = All;
     UsageCategory = Lists;
-    CardPageId = "Expense Entry Card";
+    CardPageId = "Zyn_Expense Entry Card Page";
 
     layout
     {
@@ -23,7 +23,7 @@ page 50152 "Expense List"
 
         area(FactBoxes)
         {
-            part(budgetfactbox; "Budget Factbox")
+            part(budgetfactbox; "Zyn_Budget Factbox")
             {
                 // SubPageLink = "Expense Category" = FIELD(Category);
                 ApplicationArea = All;
@@ -40,7 +40,7 @@ page 50152 "Expense List"
                 Caption = 'Categories';
                 ApplicationArea = All;
                 Image = List;
-                RunObject = Page "Expense Category List";
+                RunObject = Page "Zyn_Expense Category List Page";
                 trigger OnAction()
                 begin
                 end;

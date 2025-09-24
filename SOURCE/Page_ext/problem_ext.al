@@ -1,4 +1,4 @@
-pageextension 50119 "CustomerCard_Ext_Problem" extends "Customer Card"
+pageextension 50119 "Zyn_CustomerCard Ext Problem" extends "Customer Card"
 {
     actions
     {
@@ -13,7 +13,7 @@ pageextension 50119 "CustomerCard_Ext_Problem" extends "Customer Card"
 
                 trigger OnAction()
                 var
-                    ProblemRec: Record "Customer Problem";
+                    ProblemRec: Record "Zyn_Customer Problem";
                     CustomerRec: Record Customer;
                 begin
                     CustomerRec.Get(Rec."No.");
@@ -21,7 +21,7 @@ pageextension 50119 "CustomerCard_Ext_Problem" extends "Customer Card"
                     ProblemRec."Customer No." := CustomerRec."No.";
                     ProblemRec."customer Name" := CustomerRec."Name";
                     ProblemRec.Insert(true);
-                    Page.Run(Page::"Customer Problem Card", ProblemRec);
+                    Page.Run(Page::"Zyn_Customer Problem Card Page", ProblemRec);
                 end;
             }
         }

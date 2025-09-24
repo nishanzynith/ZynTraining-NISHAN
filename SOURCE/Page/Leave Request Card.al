@@ -1,9 +1,9 @@
-page 50149 "Leave Request card"
+page 50149 "Zyn_Leave Request Card"
 {
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "Leave Request";
+    SourceTable = "Zyn_Leave Request";
 
     layout
     {
@@ -12,14 +12,14 @@ page 50149 "Leave Request card"
             group("Leave request details")
             {
                 field("Employee ID"; Rec."Employee ID") { }
-                field("Leave Category"; Rec."Leave Category") { TableRelation = "Leave Category"."Category Name"; }
+                field("Leave Category"; Rec."Leave Category") { TableRelation = "Zyn_Leave Category"."Category Name"; }
                 field(Reason; Rec.Reason) { }
                 field("Start Date"; Rec."Start Date") { }
                 field("End Date"; Rec."End Date") { }
-                field("Remaining Days"; GetRemainingDays()){}
-            }
+                field("Remaining Days"; GetRemainingDays()) { }
             }
         }
+    }
 
     actions
     {
@@ -41,7 +41,7 @@ page 50149 "Leave Request card"
 
     procedure GetRemainingDays(): Integer
     var
-        LeaveBal: Record "Leave Balance";
+        LeaveBal: Record "Zyn_Leave Balance";
     begin
         if LeaveBal.Get(Rec."Employee ID", Rec."Leave Category") then
             exit(LeaveBal."Remaining Days")

@@ -65,7 +65,7 @@ report 50137 "Zyn_Posted SalesInvoice Report"
 
 
             }
-            dataitem("text data"; "Beginning Text Line")
+            dataitem("text data"; "Zyn_Beginning Text Line")
             {
                 DataItemLinkReference = "posted data";
                 DataItemLink = "document_no." = field("No.");

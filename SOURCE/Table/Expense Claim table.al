@@ -1,4 +1,4 @@
-table 50119 ExpenseClaimTable
+table 50119 "Zyn_Expense Claim Table"
 {
     DataClassification = ToBeClassified;
     caption = 'Expense CLaim Table';
@@ -21,7 +21,7 @@ table 50119 ExpenseClaimTable
         {
             Caption = 'Employee ID';
             DataClassification = ToBeClassified;
-            TableRelation = "Employee Table"."Emp ID";
+            TableRelation = "Zyn_Employee Table"."Emp ID";
         }
 
         field(4; claimdate; Date)
@@ -75,28 +75,6 @@ table 50119 ExpenseClaimTable
             Clustered = true;
         }
     }
-
-    fieldgroups
-    {
-        // Add changes to field groups here
-    }
-
     var
         myInt: Integer;
-
-    // trigger OnInsert()
-    // var
-    //     rec: record ExpenseClaimTable;
-    //     LastId: Integer;
-    // begin
-    //     if ClaimID = '' then begin
-    //         if Rec.FindLast() then
-    //             Evaluate(LastId, CopyStr(Rec.ClaimID, 2))
-    //         else
-    //             LastId := 99;
-
-    //         ClaimID := 'C' + Format(LastId + 1);
-    //     end;
-    // end;
-
 }

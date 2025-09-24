@@ -1,4 +1,4 @@
-page 50110 "Custom Customer List"
+page 50110 "Zyn_Custom Customer List Page"
 {
     PageType = List;
     SourceTable = Customer;
@@ -25,20 +25,20 @@ page 50110 "Custom Customer List"
                 }
             }
 
-            part("Sales Orders"; "Customer Sales Orders")
+            part("Sales Orders"; "Zyn_Customer Sales Orders")
             {
                 ApplicationArea = All;
                 SubPageLink = "Sell-to Customer No." = field("No.");
 
             }
 
-            part("Sales Invoices"; "Customer Sales Invoices")
+            part("Sales Invoices"; "Zyn_Customer Sales Invoices")
             {
                 ApplicationArea = All;
                 SubPageLink = "Sell-to Customer No." = field("No.");
             }
 
-            part("Sales Credit Memos"; "Customer Sales Credit Memos")
+            part("Sales Credit Memos"; "Zyn_CustomerSales Credit Memos")
             {
                 ApplicationArea = All;
                 SubPageLink = "Sell-to Customer No." = field("No.");

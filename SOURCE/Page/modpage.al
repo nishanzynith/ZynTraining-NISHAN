@@ -1,7 +1,7 @@
-page 50119 "Modify Log"
+page 50119 "Zyn_Modify Log"
 {
     PageType = List;
-    SourceTable = ModLogTable;
+    SourceTable = "Zyn_Modify Log Table";
     ApplicationArea = All;
     UsageCategory = None;
 

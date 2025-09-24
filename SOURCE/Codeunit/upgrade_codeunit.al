@@ -6,7 +6,7 @@ codeunit 50106 "Zyn_LastPrice Database Upgrade"
     var
         SalesInvLine: Record "Sales Invoice Line";
         SalesInvHeader: Record "Sales Invoice Header";
-        LastPrice: Record "last price finder";
+        LastPrice: Record "Zyn_Last Price Finder";
         UpgradeTag: Codeunit "Upgrade Tag";
         TagName: Code[50];
     begin

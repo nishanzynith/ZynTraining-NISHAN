@@ -1,7 +1,7 @@
-page 50150 "Pending Expense Approvals"
+page 50150 "Zyn_Pending Expense Approvals"
 {
     PageType = List;
-    SourceTable = ExpenseClaimTable;
+    SourceTable = "Zyn_Expense Claim Table";
     ApplicationArea = All;
     UsageCategory = Lists;
     Caption = 'Pending Expense Approvals';
@@ -19,10 +19,10 @@ page 50150 "Pending Expense Approvals"
                     ApplicationArea = All;
                     trigger OnDrillDown()
                     var
-                        RecClaim: Record ExpenseClaimTable;
+                        RecClaim: Record "Zyn_Expense Claim Table";
                     begin
                         if RecClaim.Get(Rec.ClaimID) then
-                            PAGE.RunModal(PAGE::Expenseclaimcard, RecClaim);
+                            PAGE.RunModal(PAGE::"Zyn_Expense Claim Card", RecClaim);
                         Editable := false;
                     end;
                 }
@@ -113,29 +113,29 @@ page 50150 "Pending Expense Approvals"
             }
         }
     }
-    procedure ValidateFullClaim(var Rec: Record ExpenseClaimTable)
-var
-    ClaimCheck: Record ExpenseClaimTable;
-    ValidateAmount : page Expenseclaimcard;
-begin
-    // 1. Bill date check
-    if Rec.billdate < CalcDate('<-3M>', WorkDate()) then
-        Error('The claim date %1 is older than 3 months. Claim cannot be approved.', Rec.billdate);
+    procedure ValidateFullClaim(var Rec: Record "Zyn_Expense Claim Table")
+    var
+        ClaimCheck: Record "Zyn_Expense Claim Table";
+        ValidateAmount: page "Zyn_Expense Claim Card";
+    begin
+        // 1. Bill date check
+        if Rec.billdate < CalcDate('<-3M>', WorkDate()) then
+            Error('The claim date %1 is older than 3 months. Claim cannot be approved.', Rec.billdate);
 
-    // 2. Amount checks
-    ValidateAmount.ValidateAmountOnly(Rec);
+        // 2. Amount checks
+        ValidateAmount.ValidateAmountOnly(Rec);
 
-    // 3. Duplicate check
-    ClaimCheck.Reset();
-    ClaimCheck.SetRange("EmployeeID", Rec."EmployeeID");
-    ClaimCheck.SetRange("billDate", Rec."billDate");
-    ClaimCheck.SetRange(Category, Rec.Category);
-    ClaimCheck.SetRange(SubType, Rec.SubType);
+        // 3. Duplicate check
+        ClaimCheck.Reset();
+        ClaimCheck.SetRange("EmployeeID", Rec."EmployeeID");
+        ClaimCheck.SetRange("billDate", Rec."billDate");
+        ClaimCheck.SetRange(Category, Rec.Category);
+        ClaimCheck.SetRange(SubType, Rec.SubType);
 
-    if ClaimCheck.FindFirst() then
-        if ClaimCheck."ClaimID" <> Rec."ClaimID" then
-            Error('Duplicate claim exists for Employee %1 on date %2 with same Category/SubType.',
-                  Rec."EmployeeID", Rec."billDate");
-end;
+        if ClaimCheck.FindFirst() then
+            if ClaimCheck."ClaimID" <> Rec."ClaimID" then
+                Error('Duplicate claim exists for Employee %1 on date %2 with same Category/SubType.',
+                      Rec."EmployeeID", Rec."billDate");
+    end;
 
 }

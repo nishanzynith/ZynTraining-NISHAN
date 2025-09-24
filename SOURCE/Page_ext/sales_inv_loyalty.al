@@ -1,4 +1,4 @@
-pageextension 50110 cusloyaltypoints extends "Customer List"
+pageextension 50110 "Zyn_Customer Loyalty points" extends "Customer List"
 {
     layout
     {

@@ -1,4 +1,4 @@
-table 50122 "Posted Beginning Text Line"
+table 50122 "Zyn_Posted Beginning Text Line"
 {
     DataClassification = ToBeClassified;
 

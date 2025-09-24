@@ -1,9 +1,9 @@
-page 50109 "Index card"
+page 50109 "Zyn_Index Card"
 {
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = IndexTable;
+    SourceTable = "Zyn_Index Table";
 
     layout
     {
@@ -36,7 +36,7 @@ page 50109 "Index card"
                     Caption = 'End Year';
                 }
             }
-            part(IndexLines; "Index List Part Page")
+            part(IndexLines; "Zyn_Index List Part Page")
             {
                 SubPageLink = Index = FIELD(Index);
                 ApplicationArea = All;

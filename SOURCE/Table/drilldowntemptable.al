@@ -1,4 +1,4 @@
-table 50113 "Buffer Field"
+table 50113 "Zyn_Buffer Field"
 {
     DataClassification = ToBeClassified;
 
@@ -13,10 +13,7 @@ table 50113 "Buffer Field"
         field(3; "Record ID"; RecordID)
         {
             DataClassification = SystemMetadata;
-
         }
-
-
     }
 
     keys

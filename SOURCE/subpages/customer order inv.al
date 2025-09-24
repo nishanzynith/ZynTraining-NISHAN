@@ -1,4 +1,4 @@
-page 50107 "Customer Sales Status Factbox"
+page 50107 "Zyn_CustomerSaleStatus Factbox"
 {
     PageType = CardPart;
     Caption = 'Customer Sales Status';
@@ -90,10 +90,10 @@ page 50107 "Customer Sales Status Factbox"
     var
         OpenSalesOrders: Integer;
         OpenSalesInvoices: Integer;
-        hascontent : Boolean;
-        contactno : Code[20];
-        contactname : Code[20];
-        contact : record Contact;
+        hascontent: Boolean;
+        contactno: Code[20];
+        contactname: Code[20];
+        contact: record Contact;
 
     trigger OnAfterGetRecord()
     var

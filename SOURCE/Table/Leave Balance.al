@@ -1,4 +1,4 @@
-table 50110 "Leave Balance"
+table 50110 "Zyn_Leave Balance"
 {
     DataClassification = ToBeClassified;
 

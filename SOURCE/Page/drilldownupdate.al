@@ -1,7 +1,7 @@
-page 50115 "Field Buffer List"
+page 50115 "Zyn_Field Buffer List Page"
 {
     PageType = List;
-    SourceTable = "Buffer Field";
+    SourceTable = "Zyn_Buffer Field";
     ApplicationArea = All;
     Editable = false;
 

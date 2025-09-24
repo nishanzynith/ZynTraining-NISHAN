@@ -1,4 +1,4 @@
-table 50114 Technician_table
+table 50114 "Zyn_Technician Table"
 {
     DataClassification = ToBeClassified;
 
@@ -27,7 +27,7 @@ table 50114 Technician_table
         {
             Caption = 'No Of Problems';
             FieldClass = FlowField;
-            CalcFormula = count("Customer Problem" where("Technician" = field("Tech ID")));
+            CalcFormula = count("Zyn_Customer Problem" where("Technician" = field("Tech ID")));
         }
 
 
@@ -39,7 +39,7 @@ table 50114 Technician_table
     }
     trigger OnInsert()
     var
-        LastTech: Record "Technician_table";
+        LastTech: Record "Zyn_Technician Table";
         LastId: Integer;
     begin
         if "Tech Id" = '' then begin

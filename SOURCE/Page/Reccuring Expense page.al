@@ -1,10 +1,10 @@
-page 50132 "Recurring Expense"
+page 50132 "Zyn_Recurring Expense"
 {
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "Recurring Expense";
-    CardPageId = "Recurring Card";
+    SourceTable = "Zyn_Recurring Expense";
+    CardPageId = "Zyn_Recurring Card";
 
     layout
     {
@@ -12,11 +12,11 @@ page 50132 "Recurring Expense"
         {
             repeater(GroupName)
             {
-                field(ID; Rec.ID) {Caption = 'ID'; }
+                field(ID; Rec.ID) { Caption = 'ID'; }
                 field(Category; Rec.Category)
                 {
                     Caption = 'Category';
-                    TableRelation = "Expense Category".Code;
+                    TableRelation = "Zyn_Expense Category".Code;
                 }
 
                 field(Amount; rec.Amount)

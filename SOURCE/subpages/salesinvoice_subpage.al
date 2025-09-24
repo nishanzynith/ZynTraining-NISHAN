@@ -1,4 +1,4 @@
-page 50114 "Customer Sales Invoices"
+page 50114 "Zyn_Customer Sales Invoices"
 {
     PageType = ListPart;
     SourceTable = "Sales Header";
@@ -23,8 +23,8 @@ page 50114 "Customer Sales Invoices"
                     var
                         sales: page "Sales Invoice";
                     begin
-                            Sales.SetRecord(Rec);
-                            Sales.Run();
+                        Sales.SetRecord(Rec);
+                        Sales.Run();
                     end;
                 }
                 field("Posting Date"; Rec."Posting Date") { ApplicationArea = All; }

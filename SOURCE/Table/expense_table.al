@@ -27,7 +27,7 @@ table 50151 "Expense Entry"
         {
             DataClassification = ToBeClassified;
             Caption = 'Category';
-            TableRelation = "Expense Category"."Code";
+            TableRelation = "Zyn_Expense Category"."Code";
             // trigger OnValidate()
             // var
             //     BudgetEntry: Record "BudgetEntry";

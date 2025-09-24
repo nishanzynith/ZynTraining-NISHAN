@@ -1,4 +1,4 @@
-table 50139 IndexTable
+table 50139 "Zyn_Index Table"
 {
     DataClassification = ToBeClassified;
 
@@ -44,11 +44,9 @@ table 50139 IndexTable
             Clustered = true;
         }
     }
-
-
     trigger OnInsert()
     var
-        LastTech: Record IndexTable;
+        LastTech: Record "Zyn_Index Table";
         LastId: Integer;
     begin
         if Index = '' then begin
@@ -69,7 +67,7 @@ table 50139 IndexTable
 
     trigger OnDelete()
     var
-        IndexListPart: Record "Index List Part";
+        IndexListPart: Record "Zyn_Index List Part";
     begin
         IndexListPart.SetRange(Index, Rec.Index);
         if IndexListPart.FindSet() then
@@ -78,7 +76,7 @@ table 50139 IndexTable
 
     local procedure GenIndexList()
     var
-        IndexListPart: Record "Index List Part";
+        IndexListPart: Record "Zyn_Index List Part";
         YearInt: Integer;
         EndYearInt: Integer;
         Value: Decimal;
@@ -100,7 +98,6 @@ table 50139 IndexTable
             exit;
 
         Value := 100;
-        // repeat
         for year := YearInt to EndYearInt do begin
             IndexListPart.Init();
             IndexListPart.EntryNo := 0;
@@ -111,9 +108,7 @@ table 50139 IndexTable
 
             Value := Value * (1 + (percentinc / 100));
             YearInt += 1;
-            // IndexListPart.EntryNo += 1;
         end;
-        // until YearInt > EndYearInt;
     end;
 
 }

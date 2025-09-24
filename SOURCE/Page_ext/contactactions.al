@@ -1,4 +1,4 @@
-pageextension 50105 "Contact List" extends "Contact List"
+pageextension 50105 "Zyn_Contact List Ext" extends "Contact List"
 {
     actions
     {
@@ -30,7 +30,7 @@ pageextension 50105 "Contact List" extends "Contact List"
                         until ContactBusRel.Next() = 0;
                     end;
 
-                    Page.RunModal(Page::"Filtered Contact List", TempContact);
+                    Page.RunModal(Page::"Zyn_Filtered Contact List", TempContact);
                 end;
 
 
@@ -61,7 +61,7 @@ pageextension 50105 "Contact List" extends "Contact List"
                         until ContactBusRel.Next() = 0;
                     end;
 
-                    Page.RunModal(Page::"Filtered Contact List", TempContact);
+                    Page.RunModal(Page::"Zyn_Filtered Contact List", TempContact);
                 end;
 
 
@@ -92,7 +92,7 @@ pageextension 50105 "Contact List" extends "Contact List"
                         until ContactBusRel.Next() = 0;
                     end;
 
-                    Page.Run(Page::"Filtered Contact List", TempContact);
+                    Page.Run(Page::"Zyn_Filtered Contact List", TempContact);
                 end;
 
             }
@@ -119,7 +119,7 @@ pageextension 50105 "Contact List" extends "Contact List"
                         until ContactBusRel.Next() = 0;
                     end;
 
-                    Page.RunModal(Page::"Filtered Contact List", TempContact);
+                    Page.RunModal(Page::"Zyn_Filtered Contact List", TempContact);
                 end;
             
 

@@ -170,9 +170,9 @@ report 50106 "Zyn_Expense Yearly Report"
     // end;
     procedure ExportMonthlyReport(SelectedYear: Integer)
     var
-        BudgetRec: Record Budgetentry;
+        BudgetRec: Record "Zyn_Budget Entry";
         ExpenseRec: Record "Expense Entry";
-        CategoryRec: Record "Expense Category";
+        CategoryRec: Record "Zyn_Expense Category";
         incomerec: Record "Income Entry";
         MonthLoop: Integer;
         StartDate: Date;

@@ -1,4 +1,4 @@
-pageextension 50103 "Customer Card Validate Ext" extends "Customer Card"
+pageextension 50103 "Zyn_Customer Card Validate Ext" extends "Customer Card"
 {
     var
         IsNewCustomer: Boolean;
@@ -51,7 +51,7 @@ pageextension 50120 CopyCustomerToOtherCompany extends "Customer Card"
 
     trigger OnClosePage()
     var
-        Publisher: Codeunit compchangepublisher;
+        Publisher: Codeunit Zyn_CompanyChangePub;
     begin
         if IsNewCustomer and (Rec.Name <> '') then
             Publisher.OnaddCustomerCreated(Rec);

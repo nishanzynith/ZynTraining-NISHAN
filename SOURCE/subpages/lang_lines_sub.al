@@ -1,7 +1,7 @@
-page 50125 "Posted Beginning Text"
+page 50125 "Zyn_Posted Beginning Text"
 {
     PageType = ListPart;
-    SourceTable = "Beginning Text Line";
+    SourceTable = "Zyn_Beginning Text Line";
     ApplicationArea = All;
 
     layout

@@ -1,4 +1,4 @@
-table 50105 "Recurring Expense"
+table 50105 "Zyn_Recurring Expense"
 {
     DataClassification = ToBeClassified;
 

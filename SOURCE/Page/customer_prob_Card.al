@@ -1,7 +1,7 @@
-page 50104 "Customer Problem Card"
+page 50104 "Zyn_Customer Problem Card Page"
 {
     PageType = Card;
-    SourceTable = "Customer Problem";
+    SourceTable = "Zyn_Customer Problem";
     ApplicationArea = All;
     Caption = 'Log Problem';
 

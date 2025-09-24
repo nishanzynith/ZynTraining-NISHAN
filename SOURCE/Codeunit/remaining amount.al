@@ -2,7 +2,7 @@ codeunit 50170 "Zyn_Remaining Budget Calc"
 {
     procedure CalcRemaining(CategoryCode: Code[20]): Decimal
     var
-        BudgetEntry: Record "BudgetEntry";
+        BudgetEntry: Record "Zyn_Budget Entry";
         ExpenseRec: Record "Expense Entry";
         StartDate: Date;
         EndDate: Date;

@@ -1,4 +1,4 @@
-pageextension 50135 Salesinvoiceposting extends "Sales Invoice list"
+pageextension 50135 "Zyn_Sales Invoice List Ext" extends "Sales Invoice list"
 {
     // layout
     // {

@@ -1,5 +1,4 @@
-// TableExtension for Customer Table
-tableextension 50100 CustomerExt extends Customer
+tableextension 50100 "Zyn_Customer Table Extension" extends Customer
 {
     fields
     {

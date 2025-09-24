@@ -14,13 +14,13 @@ table 50140 "Income Entry"
         field(2; "Date"; Date)
         {
             Caption = 'Date';
-            
+
         }
 
         field(3; "Category"; Code[20])
         {
             Caption = 'Category';
-            TableRelation = "Income Category"."Code";
+            TableRelation = "Zyn_Income Category"."Code";
         }
 
         field(4; "Description"; Text[100])
@@ -51,5 +51,5 @@ table 50140 "Income Entry"
         }
     }
 
-    
+
 }

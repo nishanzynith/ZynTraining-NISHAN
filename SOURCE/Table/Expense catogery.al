@@ -1,4 +1,4 @@
-table 50150 "Expense Category"
+table 50150 "Zyn_Expense Category"
 {
     DataClassification = ToBeClassified;
     Caption = 'Expense Category';

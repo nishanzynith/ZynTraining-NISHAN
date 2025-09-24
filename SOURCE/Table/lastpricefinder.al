@@ -1,16 +1,16 @@
-table 50101 "last price finder"
+table 50101 "Zyn_Last Price Finder"
 {
     Caption = 'last price finder';
     DataClassification = ToBeClassified;
 
     fields
     {
-        
+
         field(1; "entry no"; integer)
         {
             caption = 'Entry no.';
             AutoIncrement = true;
-            DataClassification = SystemMetadata; 
+            DataClassification = SystemMetadata;
         }
         field(5; "Customer No."; Code[20])
         {
@@ -38,7 +38,7 @@ table 50101 "last price finder"
     }
     keys
     {
-        key(PK; "Customer No.", "Item No.","entry no")
+        key(PK; "Customer No.", "Item No.", "entry no")
         {
             Clustered = true;
         }

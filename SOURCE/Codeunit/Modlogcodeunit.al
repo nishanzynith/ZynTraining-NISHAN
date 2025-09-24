@@ -16,7 +16,7 @@ codeunit 50122 "Zyn_Customer Modify Logger"
 
         xFieldRef: FieldRef;
 
-        ModifyLog: Record "ModLogTable";
+        ModifyLog: Record "Zyn_Modify Log Table";
 
         i: Integer;
 

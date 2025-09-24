@@ -1,8 +1,8 @@
-page 50105 MyCustomerRoleCenter
+page 50105 "Zyn_Custom RoleCenter"
 {
     PageType = RoleCenter;
     ApplicationArea = All;
-    UsageCategory = Administration; 
+    UsageCategory = Administration;
     Caption = 'Customer Role Center';
 
     layout
@@ -68,11 +68,11 @@ page 50105 MyCustomerRoleCenter
                     Caption = 'Technician_list';
                     ApplicationArea = All;
                     Image = TextFieldConfirm;
-                    RunObject = PAGE "Technician List";
+                    RunObject = PAGE "Zyn_Technician List";
                 }
             }
 
-             group("Asset Management")
+            group("Asset Management")
             {
                 action("Asset Type")
                 {
@@ -88,7 +88,7 @@ page 50105 MyCustomerRoleCenter
                 action("EmployeeList")
                 {
                     ApplicationArea = all;
-                    Runobject = Page "Employee entry List";
+                    Runobject = Page "Zyn_Employee Entry List Page";
                 }
 
                 action("Employee Asset List")
@@ -103,37 +103,37 @@ page 50105 MyCustomerRoleCenter
                 action("Expense Category")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Expense Category List";
+                    RunObject = Page "Zyn_Expense Category List Page";
                 }
 
                 action("Expense List")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Expense List";
+                    RunObject = Page "Zyn_Expense List";
                 }
 
                 action("Recurring Expense")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Recurring Expense";
+                    RunObject = Page "Zyn_Recurring Expense";
                 }
 
                 action("Budget List")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Budget List";
+                    RunObject = Page "Zyn_Budget List Page";
                 }
 
                 action("Income List")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Income List";
+                    RunObject = Page "Zyn_Income List";
                 }
 
                 action("Income category")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Income Category List";
+                    RunObject = Page "Zyn_Income Category List";
                 }
             }
 
@@ -142,19 +142,19 @@ page 50105 MyCustomerRoleCenter
                 action("Leave Request List")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Leave Request List";
+                    RunObject = Page "Zyn_Leave Request List";
                 }
 
                 action("Employee List")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Employee entry List";
+                    RunObject = Page "Zyn_Employee Entry List Page";
                 }
 
                 action("Leave Category")
                 {
                     ApplicationArea = All;
-                    RunObject = Page "Leave Category List";
+                    RunObject = Page "Zyn_Leave Category List";
                 }
             }
 

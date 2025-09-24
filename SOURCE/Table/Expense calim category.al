@@ -1,16 +1,16 @@
-table 50120 Expenseclaimcat
+table 50120 "Zyn_Expense claim category"
 {
     DataClassification = ToBeClassified;
-    
+
     fields
     {
-        field(1;Catcode; code[6])
+        field(1; Catcode; code[6])
         {
             Caption = 'Claim Category Code';
             DataClassification = ToBeClassified;
         }
 
-        field(2;Name;text[250])
+        field(2; Name; text[250])
         {
             Caption = 'Name';
             DataClassification = ToBeClassified;
@@ -28,26 +28,26 @@ table 50120 Expenseclaimcat
             DataClassification = ToBeClassified;
         }
 
-        field(5;Limit;Decimal)
+        field(5; Limit; Decimal)
         {
             Caption = 'Amount Limit';
             DataClassification = ToBeClassified;
         }
     }
-    
+
     keys
     {
-        key(PK;Catcode,Subtype,Name)
+        key(PK; Catcode, Subtype, Name)
         {
             Clustered = true;
         }
     }
-    
+
     var
-    
+
     trigger OnInsert()
     begin
-        
+
     end;
-    
+
 }

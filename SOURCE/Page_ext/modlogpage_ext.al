@@ -1,4 +1,4 @@
-pageextension 50106 Modifylogext extends "Customer List"
+pageextension 50106 "Zyn_ModifyLog Ext" extends "Customer List"
 {
     layout
     { }
@@ -14,7 +14,7 @@ pageextension 50106 Modifylogext extends "Customer List"
                 Image = Log;
                 trigger OnAction()
                 begin
-                    RunModal(Page::"Modify Log")
+                    RunModal(Page::"Zyn_Modify Log")
                 end;
             }
 

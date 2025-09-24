@@ -1,4 +1,4 @@
-tableextension 50103 LanglinesExt extends "Sales Header"
+tableextension 50103 "Zyn_Langlines Header Ext" extends "Sales Header"
 {
     fields
     {
@@ -121,8 +121,8 @@ tableextension 50103 LanglinesExt extends "Sales Header"
     }
     trigger OnDelete()
     var
-        BeginningTextLine: Record "Beginning Text Line";
-        EndingTextLine: Record "Beginning Text Line";
+        BeginningTextLine: Record "Zyn_Beginning Text Line";
+        EndingTextLine: Record "Zyn_Beginning Text Line";
     begin
 
         BeginningTextLine.SetRange("document_no.", Rec."No.");

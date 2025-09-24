@@ -1,7 +1,7 @@
-page 50106 "Technician Problems"
+page 50106 "Zyn_Technician Problems"
 {
     PageType = ListPart;
-    SourceTable = "Customer Problem";
+    SourceTable = "Zyn_Customer Problem";
     ApplicationArea = All;
     Caption = 'Assigned Problems';
 

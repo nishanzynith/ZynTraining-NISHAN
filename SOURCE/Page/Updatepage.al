@@ -1,4 +1,4 @@
-PAGE 50112 UpdatePage
+PAGE 50112 Zyn_UpdatePage
 {
 
     layout
@@ -33,7 +33,7 @@ PAGE 50112 UpdatePage
                 var
                     RecRef: RecordRef;
                     FieldRef: FieldRef;
-                    TempBuffer: Record "Buffer Field" temporary;
+                    TempBuffer: Record "Zyn_Buffer Field" temporary;
                     i: Integer;
                     FN: Text[250];
                 begin
@@ -53,7 +53,7 @@ PAGE 50112 UpdatePage
 
                     RecRef.Close();
 
-                    if Page.RunModal(Page::"Field Buffer List", TempBuffer, selectedcust) = Action::LookupOK then begin
+                    if Page.RunModal(Page::"Zyn_Field Buffer List Page", TempBuffer, selectedcust) = Action::LookupOK then begin
                         FieldID := TempBuffer."Field ID";
                         FieldName := TempBuffer."Field Name";
                     end;
@@ -68,7 +68,7 @@ PAGE 50112 UpdatePage
                 var
                     RecRef: RecordRef;
                     FieldRef: FieldRef;
-                    TempValueBuffer: Record "Buffer Field" temporary;
+                    TempValueBuffer: Record "Zyn_Buffer Field" temporary;
                     LineNo: Integer;
                 begin
                     if (TableName = 0) OR (fieldid = 0) then
@@ -89,8 +89,7 @@ PAGE 50112 UpdatePage
 
                         RecRef.Close();
 
-                        if Page.RunModal(Page::"Field Buffer List", TempValueBuffer, selectedcust) = Action::LookupOK then 
-                        begin
+                        if Page.RunModal(Page::"Zyn_Field Buffer List Page", TempValueBuffer, selectedcust) = Action::LookupOK then begin
 
                             RecordSecltion := TempValueBuffer."Field Name";
                             valueID := TempValueBuffer."Record ID";
@@ -141,7 +140,7 @@ PAGE 50112 UpdatePage
         Object: Integer;
         selectedcust: Integer;
         valueID: RecordId;
-        
+
 }
 
 

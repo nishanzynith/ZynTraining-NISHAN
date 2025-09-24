@@ -1,4 +1,4 @@
-table 50103 "Income Category"
+table 50103 "Zyn_Income Category"
 {
     Caption = 'Income Category';
     DataClassification = ToBeClassified;
@@ -22,8 +22,6 @@ table 50103 "Income Category"
             Clustered = true;
         }
     }
-
-   
     trigger OnInsert()
     begin
         if "Code" = '' then

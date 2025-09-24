@@ -1,4 +1,4 @@
-pageextension 50122 "rolecenter notification" extends "O365 Activities"
+pageextension 50122 "Zyn_Rolecenter Notification" extends "O365 Activities"
 {
     layout
     { }

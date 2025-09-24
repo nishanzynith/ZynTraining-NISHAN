@@ -1,4 +1,4 @@
-table 50106 "Employee Table"
+table 50106 "Zyn_Employee Table"
 {
     DataClassification = ToBeClassified;
 
@@ -84,10 +84,10 @@ table 50106 "Employee Table"
 
     trigger OnInsert()
     var
-        LastTech: Record "Employee Table";
+        LastTech: Record "Zyn_Employee Table";
         LastId: Integer;
-        LeaveBal: Record "Leave Balance";
-        LeaveCat: Record "Leave Category";
+        LeaveBal: Record "Zyn_Leave Balance";
+        LeaveCat: Record "Zyn_Leave Category";
 
     begin
         if "Emp ID" = '' then begin
@@ -112,8 +112,8 @@ table 50106 "Employee Table"
 
     trigger OnModify()
     var
-        LeaveBal: Record "Leave Balance";
-        LeaveCat: Record "Leave Category";
+        LeaveBal: Record "Zyn_Leave Balance";
+        LeaveCat: Record "Zyn_Leave Category";
     begin
         if LeaveCat.FindSet() then
             repeat

@@ -2,7 +2,7 @@ codeunit 50104 "Zyn_Leave Req Cue Mgt."
 {
     procedure OpenLeaveBalance(Notification: Notification)
     var
-        LeavePage: Page "Leave Request List";
+        LeavePage: Page "Zyn_Leave Request List";
     begin
         LeavePage.Run();
     end;
@@ -35,7 +35,7 @@ codeunit 50105 "Zyn_Leave Req Notification Mgt"
     procedure ShowLeaveBalanceNotification()
     var
         Notification: Notification;
-        LeaveReq: Record "Leave Request";
+        LeaveReq: Record "Zyn_Leave Request";
         // leaveBal: page "Leave Request card";
         remaining: integer;
     begin
@@ -81,8 +81,8 @@ codeunit 50105 "Zyn_Leave Req Notification Mgt"
     procedure ShowLeaveRejectNotification()
     var
         Notification: Notification;
-        LeaveReq: Record "Leave Request";
-        leaveBal: page "Leave Request card";
+        LeaveReq: Record "Zyn_Leave Request";
+        leaveBal: page "Zyn_Leave Request Card";
         remaining: integer;
     begin
         LeaveReq.Reset();
@@ -107,8 +107,8 @@ codeunit 50105 "Zyn_Leave Req Notification Mgt"
     procedure ShowLeavePendingNotification()
     var
         Notification: Notification;
-        LeaveReq: Record "Leave Request";
-        leaveBal: page "Leave Request card";
+        LeaveReq: Record "Zyn_Leave Request";
+        leaveBal: page "Zyn_Leave Request Card";
         remaining: integer;
         pending: integer;
     begin

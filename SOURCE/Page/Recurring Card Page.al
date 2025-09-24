@@ -1,9 +1,9 @@
-page 50133 "Recurring Card"
+page 50133 "Zyn_Recurring Card"
 {
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = "Recurring Expense";
+    SourceTable = "Zyn_Recurring Expense";
 
     layout
     {
@@ -12,7 +12,7 @@ page 50133 "Recurring Card"
             group(GroupName)
             {
                 field(ID; Rec.ID) { Editable = false; }
-                field(Category; Rec.Category) { TableRelation = "Expense Category".code;}
+                field(Category; Rec.Category) { TableRelation = "Zyn_Expense Category".code; }
                 field(Amount; Rec.Amount) { }
                 field("Start Date"; Rec."Start Date") { }
                 field("Cycling Period"; Rec."Cycling Period") { }

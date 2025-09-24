@@ -1,4 +1,4 @@
-table 50115 "ModLogTable"
+table 50115 "Zyn_Modify Log Table"
 {
     DataClassification = ToBeClassified;
 

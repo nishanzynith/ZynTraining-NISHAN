@@ -1,7 +1,7 @@
-page 50146 "Income Category List"
+page 50146 "Zyn_Income Category List"
 {
     PageType = List;
-    SourceTable = "Income Category";
+    SourceTable = "Zyn_Income Category";
     Caption = 'Income Categories';
     ApplicationArea = All;
     UsageCategory = Lists;
@@ -24,7 +24,7 @@ page 50146 "Income Category List"
         }
         area(FactBoxes)
         {
-            part(IncomeStats; "Income Factbox")
+            part(IncomeStats; "Zyn_Income Factbox")
             {
                 SubPageLink = Code = FIELD(Code);
             }

@@ -10,7 +10,7 @@ table 50121 "Zynith_Company"
             trigger OnValidate()
             begin
                 if xRec.Name <> '' then
-                    Error('Name cannot be changed once filled.');
+                    Error(nameerr);
             end;
         }
         field(2; "Evaluation Company"; Boolean)
@@ -38,6 +38,9 @@ table 50121 "Zynith_Company"
             Clustered = true;
         }
     }
+
+    var
+    nameerr : label 'Name cannot be changed once filled.';
 
     // trigger OnInsert()
     // var

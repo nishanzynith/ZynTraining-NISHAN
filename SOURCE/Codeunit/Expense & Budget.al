@@ -72,7 +72,7 @@ codeunit 50155 "Zyn_Expense&BudgetCalculator"
 
     procedure GetThisYearBudget(CategoryCode: Code[20]): Decimal
     var
-        Budget: Record Budgetentry;
+        Budget: Record "Zyn_Budget Entry";
         StartDate: Date;
         EndDate: Date;
         Sum: Decimal;
@@ -89,7 +89,7 @@ codeunit 50155 "Zyn_Expense&BudgetCalculator"
 
     procedure GetThisHalfYearBudget(CategoryCode: Code[20]): Decimal
     var
-        Budget: Record Budgetentry;
+        Budget: Record "Zyn_Budget Entry";
         StartDate: Date;
         EndDate: Date;
         Sum: Decimal;
@@ -106,7 +106,7 @@ codeunit 50155 "Zyn_Expense&BudgetCalculator"
 
     procedure GetThisQuarterBudget(CategoryCode: Code[20]): Decimal
     var
-        Budget: Record Budgetentry;
+        Budget: Record "Zyn_Budget Entry";
         StartDate: Date;
         EndDate: Date;
         Sum: Decimal;
@@ -123,7 +123,7 @@ codeunit 50155 "Zyn_Expense&BudgetCalculator"
 
     procedure GetThisMonthBudget(CategoryCode: Code[20]): Decimal
     var
-        Budget: Record Budgetentry;
+        Budget: Record "Zyn_Budget Entry";
         StartDate: Date;
         EndDate: Date;
         Sum: Decimal;

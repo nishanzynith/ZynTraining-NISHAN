@@ -1,4 +1,4 @@
-tableextension 50119 SalesLineExt extends "Sales Line"
+tableextension 50119 "Zyn_Sales Line Extension" extends "Sales Line"
 {
     trigger OnInsert()
     begin

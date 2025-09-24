@@ -49,7 +49,7 @@ report 50103 "Zyn_Expense Tracker Report"
                     {
                         ApplicationArea = All;
                         Caption = 'Category';
-                        TableRelation = "Expense Category"."Code";
+                        TableRelation = "Zyn_Expense Category"."Code";
                     }
                 }
             }

@@ -1,4 +1,4 @@
-pageextension 50128 "SalescreditExt" extends "Sales Credit Memo"
+pageextension 50128 "Zyn_Sales Credit Ext" extends "Sales Credit Memo"
 {
     layout
     {
@@ -14,7 +14,7 @@ pageextension 50128 "SalescreditExt" extends "Sales Credit Memo"
                     trigger OnValidate()
                     var
                         ExtText: Record "Extended Text Line";
-                        Buffer: Record "Beginning Text Line";
+                        Buffer: Record "Zyn_Beginning Text Line";
                         Customer: Record Customer;
                         lineNo :Integer;
                     begin
@@ -48,7 +48,7 @@ pageextension 50128 "SalescreditExt" extends "Sales Credit Memo"
                 }
             
 
-                part(BeginningTextLines; "Beginning Text credit Subpage")
+                part(BeginningTextLines; "Zyn_BeginText credit Subpage")
                 {
                     SubPageLink = "document_no." = FIELD("No."),
                     Document_type = field("Document Type"),
@@ -66,7 +66,7 @@ pageextension 50128 "SalescreditExt" extends "Sales Credit Memo"
                     trigger OnValidate()
                     var
                         ExtText: Record "Extended Text Line";
-                        Buffer: Record "Beginning Text Line";
+                        Buffer: Record "Zyn_Beginning Text Line";
                         Customer: Record Customer;
                         lineNo :Integer;
                     begin
@@ -102,7 +102,7 @@ pageextension 50128 "SalescreditExt" extends "Sales Credit Memo"
             
     
 
-                part(Endingtextlines; "Ending Text Subpage")
+                part(Endingtextlines; "Zyn_Ending Text Subpage")
                 {
                     SubPageLink = "document_no." = FIELD("No."),
                      Document_type = field("Document Type"),

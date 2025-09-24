@@ -1,4 +1,4 @@
-page 50144 "Income Card"
+page 50144 "Zyn_Income Card"
 {
     PageType = Card;
     SourceTable = "Income Entry";
@@ -50,7 +50,7 @@ page 50144 "Income Card"
                 Image = Category;
                 trigger OnAction()
                 var
-                    CatRec: Record "Income Category";
+                    CatRec: Record "Zyn_Income Category";
                 begin
                     // if rec."Category" <> '' then
                     //     if CatRec.Get(rec."Category") then
@@ -58,7 +58,7 @@ page 50144 "Income Card"
                     //     else
                     //         Message('Category %1 not found.', "Category")
                     // else
-                        Page.Run(Page::"Income Category List");
+                    Page.Run(Page::"Zyn_Income Category List");
                 end;
             }
         }

@@ -1,4 +1,4 @@
-tableextension 50106 Cuspoints extends Customer
+tableextension 50106 "Zyn_Customer Loyalty Points" extends Customer
 {
     fields
     {

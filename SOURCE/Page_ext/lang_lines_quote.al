@@ -1,4 +1,4 @@
-pageextension 50131 "SalesquoteExt" extends "Sales Quote"
+pageextension 50131 "Zyn_Sales Quote Ext" extends "Sales Quote"
 {
     layout
     {
@@ -15,7 +15,7 @@ pageextension 50131 "SalesquoteExt" extends "Sales Quote"
                 }
             
 
-                part(BeginningTextLines; "Beginning Text Subpage")
+                part(BeginningTextLines; "Zyn_Beginning Text Subpage")
                 {
                     SubPageLink = "document_no." = FIELD("No."),
                     Selection = const(Zyn_Selection::Begining);
@@ -35,7 +35,7 @@ pageextension 50131 "SalesquoteExt" extends "Sales Quote"
             
     
 
-                part(Endingtextlines; "Ending Text Subpage")
+                part(Endingtextlines; "Zyn_Ending Text Subpage")
                 {
                     SubPageLink = "document_no." = FIELD("No."),
                     "Selection" = const(Zyn_Selection::Ending);

@@ -3,8 +3,8 @@ codeunit 50123 Zyn_postsalesinv
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", OnAfterSalesInvHeaderInsert, '', false, false)]
     procedure postedinvoice(var SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
     var
-        PostedExtendedTextTable: Record "Beginning Text Line";
-        ExtendedTextTable: Record "Beginning Text Line";
+        PostedExtendedTextTable: Record "Zyn_Beginning Text Line";
+        ExtendedTextTable: Record "Zyn_Beginning Text Line";
     begin
         SalesInvHeader."Beginning Text Code" := SalesHeader."Beginning Text Code";
         SalesInvHeader."Ending Text code" := SalesHeader."Ending text code";
@@ -62,8 +62,8 @@ codeunit 50123 Zyn_postsalesinv
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", OnAfterSalesCrMemoHeaderInsert, '', false, false)]
     procedure postedcredit(var SalesCrMemoHeader: Record "Sales Cr.Memo Header"; SalesHeader: Record "Sales Header"; CommitIsSuppressed: Boolean; WhseShip: Boolean; WhseReceive: Boolean; var TempWhseShptHeader: Record "Warehouse Shipment Header"; var TempWhseRcptHeader: Record "Warehouse Receipt Header")
     var
-        PostedExtendedTextTable: Record "Beginning Text Line";
-        ExtendedTextTable: Record "Beginning Text Line";
+        PostedExtendedTextTable: Record "Zyn_Beginning Text Line";
+        ExtendedTextTable: Record "Zyn_Beginning Text Line";
     begin
         SalesCrMemoHeader."Beginning Text Code" := SalesHeader."Beginning Text Code";
         SalesCrMemoHeader."Ending Text code" := SalesHeader."Ending text code";
@@ -119,8 +119,8 @@ codeunit 50123 Zyn_postsalesinv
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Quote to Order", OnAfterInsertSalesOrderHeader, '', false, false)]
     procedure postedQuotevar(SalesOrderHeader: Record "Sales Header"; SalesQuoteHeader: Record "Sales Header")
     var
-        PostedExtendedTextTable: Record "Beginning Text Line";
-        ExtendedTextTable: Record "Beginning Text Line";
+        PostedExtendedTextTable: Record "Zyn_Beginning Text Line";
+        ExtendedTextTable: Record "Zyn_Beginning Text Line";
     begin
         SalesOrderHeader."Beginning Text Code" := SalesQuoteHeader."Beginning Text Code";
         SalesOrderHeader."Ending Text code" := SalesQuoteHeader."Ending text code";
@@ -147,8 +147,8 @@ codeunit 50123 Zyn_postsalesinv
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Quote to Invoice", OnAfterInsertSalesInvoiceLine, '', false, false)]
     procedure postedquoteInvoice(SalesQuoteLine: Record "Sales Line"; SalesQuoteHeader: Record "Sales Header"; var SalesInvoiceLine: Record "Sales Line"; SalesInvoiceHeader: Record "Sales Header")
     var
-        PostedExtendedTextTable: Record "Beginning Text Line";
-        ExtendedTextTable: Record "Beginning Text Line";
+        PostedExtendedTextTable: Record "Zyn_Beginning Text Line";
+        ExtendedTextTable: Record "Zyn_Beginning Text Line";
     begin
         SalesInvoiceHeader."Beginning Text Code" := SalesQuoteHeader."Beginning Text Code";
         SalesInvoiceHeader."Ending Text code" := SalesQuoteHeader."Ending text code";
@@ -175,7 +175,7 @@ codeunit 50123 Zyn_postsalesinv
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", OnAfterSalesInvHeaderInsert, '', false, false)]
     procedure postedorderinvoice(var SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
     var
-        PostedExtendedTextTable: Record "Beginning Text Line";
+        PostedExtendedTextTable: Record "Zyn_Beginning Text Line";
         ExtendedTextTable: Record "Extended Text Line";
     begin
         SalesInvHeader."Invoice beginning Text code" := SalesHeader."Invoice begining Text Code";
@@ -268,7 +268,7 @@ codeunit 50123 Zyn_postsalesinv
         Selection: Enum Zyn_Selection)
     var
         ExtText: Record "Extended Text Line";
-        Buffer: Record "Beginning Text Line";
+        Buffer: Record "Zyn_Beginning Text Line";
         Customer: Record Customer;
         langcode: code[20];
     begin

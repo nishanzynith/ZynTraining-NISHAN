@@ -1,7 +1,7 @@
-page 50140 "Index List Part Page"
+page 50140 "Zyn_Index List Part Page"
 {
     PageType = ListPart;
-    SourceTable = "Index List Part";
+    SourceTable = "Zyn_Index List Part";
     ApplicationArea = All;
     Editable = false;
 

@@ -7,7 +7,7 @@ table 50116 "Employee Asset"
         field(1; "Employee ID"; Code[15])
         {
             DataClassification = ToBeClassified;
-            TableRelation = "Employee Table"."Emp ID";
+            TableRelation = "Zyn_Employee Table"."Emp ID";
         }
 
         field(2; "Serial No."; Code[6])

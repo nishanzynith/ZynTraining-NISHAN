@@ -1,10 +1,10 @@
-page 50175 Expenseclaimcard
+page 50175 "Zyn_Expense Claim Card"
 {
     Caption = 'Expense Claim Card';
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = ExpenseClaimTable;
+    SourceTable = "Zyn_Expense Claim Table";
 
     layout
     {
@@ -19,10 +19,10 @@ page 50175 Expenseclaimcard
                 {
                     trigger OnDrillDown()
                     var
-                        expcat: Record Expenseclaimcat;
-                        claimcardpage: page Expenseclaimcard;
+                        expcat: Record "Zyn_Expense claim category";
+                        claimcardpage: page "Zyn_Expense Claim Card";
                     begin
-                        if Page.RunModal(Page::ExpenseClaimCat, expcat) = Action::LookupOK then begin
+                        if Page.RunModal(Page::"Zyn_Expense Claim Category", expcat) = Action::LookupOK then begin
                             Rec."Category" := expcat.Catcode;
                             Rec.Subtype := expcat.Subtype;
                         end;
@@ -136,8 +136,8 @@ page 50175 Expenseclaimcard
 
     procedure CalcAvailableLimit()
     var
-        ExpenseClaimRec: Record "ExpenseClaimtable";
-        ClaimCategoryRec: Record "ExpenseClaimCat";
+        ExpenseClaimRec: Record "Zyn_Expense Claim Table";
+        ClaimCategoryRec: Record "Zyn_Expense claim category";
         TotalApproved: Decimal;
         StartDate: Date;
         EndDate: Date;
@@ -172,10 +172,10 @@ page 50175 Expenseclaimcard
     end;
 
 
-    procedure ValidateAmountOnly(var Rec: Record ExpenseClaimTable)
+    procedure ValidateAmountOnly(var Rec: Record "Zyn_Expense Claim Table")
     var
-        Cat: Record Expenseclaimcat;
-        ClaimCheck: Record ExpenseClaimTable;
+        Cat: Record "Zyn_Expense claim category";
+        ClaimCheck: Record "Zyn_Expense Claim Table";
         MaxAllowed: Decimal;
         ApprovedAmount: Decimal;
     begin

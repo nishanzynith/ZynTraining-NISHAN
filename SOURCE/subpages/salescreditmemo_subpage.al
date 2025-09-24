@@ -1,4 +1,4 @@
-page 50113 "Customer Sales Credit Memos"
+page 50113 "Zyn_CustomerSales Credit Memos"
 {
     PageType = ListPart;
     SourceTable = "Sales Header";

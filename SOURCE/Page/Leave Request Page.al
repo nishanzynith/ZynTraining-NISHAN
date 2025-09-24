@@ -1,11 +1,11 @@
-page 50151 "Leave Request List"
+page 50151 "Zyn_Leave Request List"
 {
     PageType = List;
     ApplicationArea = All;
     Caption = 'Leave Request List';
-    SourceTable = "Leave Request";
+    SourceTable = "Zyn_Leave Request";
     UsageCategory= Lists;
-    CardPageId ="Leave Request card";
+    CardPageId ="Zyn_Leave Request Card";
  
     layout
     {
@@ -82,7 +82,7 @@ page 50151 "Leave Request List"
     }
   
  var 
- recopy : record "Leave Request";
+ recopy : record "Zyn_Leave Request";
  notify : Notification;
 
 //  trigger OnOpenPage()
@@ -99,9 +99,9 @@ page 50151 "Leave Request List"
 //         notify.Send();
 //     end;
 //  end;
- procedure ApproveLeaveRequest(var LeaveReq: Record "Leave Request")
+ procedure ApproveLeaveRequest(var LeaveReq: Record "Zyn_Leave Request")
 var
-    LeaveBal: Record "Leave Balance";
+    LeaveBal: Record "Zyn_Leave Balance";
     DaysTaken: Integer;
 begin
 
@@ -145,7 +145,7 @@ end;
 
    procedure GetRemainingDays(): Integer
     var
-        LeaveBal: Record "Leave Balance";
+        LeaveBal: Record "Zyn_Leave Balance";
     begin
         if LeaveBal.Get(Rec."Employee ID", Rec."Leave Category") then
             exit(LeaveBal."Remaining Days")
@@ -153,9 +153,9 @@ end;
             exit(0);
     end;
 
-     procedure RejectLeaveRequest(var LeaveReq: Record "Leave Request")
+     procedure RejectLeaveRequest(var LeaveReq: Record "Zyn_Leave Request")
 var
-    LeaveBal: Record "Leave Balance";
+    LeaveBal: Record "Zyn_Leave Balance";
     DaysTaken: Integer;
 begin
     if LeaveReq.Status = LeaveReq.Status::Approved then

@@ -1,4 +1,4 @@
-tableextension 50101 "Purchase Header Ext" extends "Purchase Header"
+tableextension 50101 "Zyn_Purchase Header Ext" extends "Purchase Header"
 {
     fields
     {

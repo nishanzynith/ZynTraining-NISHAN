@@ -1,4 +1,4 @@
-page 50123 "Filtered Contact List"
+page 50123 "Zyn_Filtered Contact List"
 {
     PageType = List;
     SourceTable = Contact;

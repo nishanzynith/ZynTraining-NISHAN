@@ -1,17 +1,17 @@
-  codeunit 50102 "Zyn_Recurring Expense Process"
+codeunit 50102 "Zyn_Recurring Expense Process"
 {
     Subtype = Normal;
 
     trigger OnRun()
     var
-        RecurringExpense: Record "Recurring Expense";
+        RecurringExpense: Record "Zyn_Recurring Expense";
     begin
         ProcessRecurringExpenses();
     end;
 
     local procedure ProcessRecurringExpenses()
     var
-        RecurringExpense: Record "Recurring Expense";
+        RecurringExpense: Record "Zyn_Recurring Expense";
     begin
         RecurringExpense.Reset();
         RecurringExpense.SetRange("Next Cycle Date", WorkDate());
@@ -23,7 +23,7 @@
             until RecurringExpense.Next() = 0;
     end;
 
-    local procedure CreateExpense(RecurringExpense: Record "Recurring Expense")
+    local procedure CreateExpense(RecurringExpense: Record "Zyn_Recurring Expense")
     var
         Expense: Record "Expense Entry";
     begin
@@ -35,7 +35,7 @@
         Expense.Insert();
     end;
 
-    local procedure UpdateNextDate(var RecurringExpense: Record "Recurring Expense")
+    local procedure UpdateNextDate(var RecurringExpense: Record "Zyn_Recurring Expense")
     begin
         case RecurringExpense."Cycling Period" of
             RecurringExpense."Cycling Period"::Weekly:

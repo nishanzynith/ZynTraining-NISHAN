@@ -78,7 +78,7 @@ report 50135 "Zyn_Sales Invoice Report"
                         var
                             RecRef: RecordRef;
                             FieldRef: FieldRef;
-                            TempBuffer: Record "Buffer Field" temporary;
+                            TempBuffer: Record "Zyn_Buffer Field" temporary;
                             i: Integer;
                             FN: Text[250];
                         begin
@@ -97,7 +97,7 @@ report 50135 "Zyn_Sales Invoice Report"
 
                             RecRef.Close();
 
-                            if Page.RunModal(Page::"Field Buffer List", TempBuffer, selectedcust) = Action::LookupOK then begin
+                            if Page.RunModal(Page::"Zyn_Field Buffer List Page", TempBuffer, selectedcust) = Action::LookupOK then begin
 
                                 RecordSelection := TempBuffer."Field Name";
                                 valueID := TempBuffer."Record ID";
@@ -113,7 +113,7 @@ report 50135 "Zyn_Sales Invoice Report"
                         var
                             RecRef: RecordRef;
                             FieldRef: FieldRef;
-                            TempValueBuffer: Record "Buffer Field" temporary;
+                            TempValueBuffer: Record "Zyn_Buffer Field" temporary;
                             LineNo: Integer;
                             salesheader: Record "Sales Header";
                         begin
@@ -137,7 +137,7 @@ report 50135 "Zyn_Sales Invoice Report"
 
                                 RecRef.Close();
 
-                                if Page.RunModal(Page::"Field Buffer List", TempValueBuffer, selectedcust) = Action::LookupOK then begin
+                                if Page.RunModal(Page::"Zyn_Field Buffer List Page", TempValueBuffer, selectedcust) = Action::LookupOK then begin
 
                                     filteringvalue := TempValueBuffer."Field Name";
                                     // RecordSelection := TempValueBuffer."Field Name";

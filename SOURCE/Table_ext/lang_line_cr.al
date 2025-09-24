@@ -1,4 +1,4 @@
-tableextension 50127 LanglinescreditExt extends "Sales Cr.Memo Header"
+tableextension 50127 "Zyn_Langlines Credit Memo Ext" extends "Sales Cr.Memo Header"
 {
     fields
     {

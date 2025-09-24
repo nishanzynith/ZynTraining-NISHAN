@@ -1,5 +1,5 @@
 // PageExtension for Customer Card
-pageextension 50107 CuscreditCardExt extends "Customer Card"
+pageextension 50107 "Zyn_Customer Credit Card Ext" extends "Customer Card"
 {
     layout
     {

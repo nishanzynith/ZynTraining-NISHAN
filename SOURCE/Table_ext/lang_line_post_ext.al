@@ -1,4 +1,4 @@
-tableextension 50123 "Sales Invoice Header Ext" extends "Sales Invoice Header"
+tableextension 50123 "Zyn_Sales Invoice Header Ext" extends "Sales Invoice Header"
 {
     fields
     {

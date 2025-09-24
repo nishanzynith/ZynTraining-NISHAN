@@ -1,4 +1,4 @@
-pageextension 50137 "Bank Report ext" extends "Customer List"
+pageextension 50137 "Zyn_Bank Report Ext" extends "Customer List"
 {
     actions
     {

@@ -1,4 +1,4 @@
-table 50108 "Leave Category"
+table 50108 "Zyn_Leave Category"
 {
     DataClassification = ToBeClassified;
 
@@ -44,8 +44,8 @@ table 50108 "Leave Category"
 
     trigger OnInsert()
     var
-        LeaveBal: Record "Leave Balance";
-        Emp: Record "Employee Table";
+        LeaveBal: Record "Zyn_Leave Balance";
+        Emp: Record "Zyn_Employee Table";
     begin
         if Emp.FindSet() then
             repeat
@@ -60,9 +60,9 @@ table 50108 "Leave Category"
 
     trigger OnModify()
     var
-        LeaveBal: Record "Leave Balance";
+        LeaveBal: Record "Zyn_Leave Balance";
     begin
-        LeaveBal.SetRange("Leave Category", Rec."Category Name"); 
+        LeaveBal.SetRange("Leave Category", Rec."Category Name");
         if LeaveBal.FindFirst() then begin
             repeat
                 LeaveBal."Remaining Days" := Rec."Number of Days Allowed";
@@ -80,8 +80,8 @@ table 50108 "Leave Category"
 
     trigger OnDelete()
     var
-        LeaveBal: Record "Leave Balance";
-        Emp: Record "Employee Table";
+        LeaveBal: Record "Zyn_Leave Balance";
+        Emp: Record "Zyn_Employee Table";
     begin
         LeaveBal.SetRange("Leave Category", "Category Name");
         LeaveBal.DeleteAll();

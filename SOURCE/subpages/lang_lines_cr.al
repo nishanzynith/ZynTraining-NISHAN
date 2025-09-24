@@ -1,7 +1,7 @@
-page 50129 "Beginning Text credit Subpage"
+page 50129 "Zyn_BeginText credit Subpage"
 {
     PageType = ListPart;
-    SourceTable = "Beginning Text Line";
+    SourceTable = "Zyn_Beginning Text Line";
     ApplicationArea = All;
 
     layout

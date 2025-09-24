@@ -1,4 +1,4 @@
-page 50155 "Expense Entry Card"
+page 50155 "Zyn_Expense Entry Card Page"
 {
     PageType = Card;
     UsageCategory = Administration;
@@ -32,11 +32,11 @@ page 50155 "Expense Entry Card"
                 {
                     ApplicationArea = All;
                     Caption = 'Category';
-                    TableRelation = "Expense Category".Code;
+                    TableRelation = "Zyn_Expense Category".Code;
                     ToolTip = 'Select the category for this expense';
                 }
 
-                field(Remaining;Rec.Remaining)
+                field(Remaining; Rec.Remaining)
                 {
                     ApplicationArea = all;
                     Editable = false;
@@ -63,7 +63,7 @@ page 50155 "Expense Entry Card"
 
                 trigger OnAction()
                 begin
-                    Page.Run(Page::"Expense Category List");
+                    Page.Run(Page::"Zyn_Expense Category List Page");
                 end;
             }
         }

@@ -1,4 +1,4 @@
-pageextension 50126 "SalesInvoiceExt" extends "Sales Invoice"
+pageextension 50126 "Zyn_Sales Invoice Ext" extends "Sales Invoice"
 {
     layout
     {
@@ -51,7 +51,7 @@ pageextension 50126 "SalesInvoiceExt" extends "Sales Invoice"
                 }
             
 
-                part(BeginningTextLines; "Beginning Text Subpage")
+                part(BeginningTextLines; "Zyn_Beginning Text Subpage")
                 {
                     SubPageLink = "document_no." = FIELD("No."),
                     Selection = const(Zyn_Selection::Begining);
@@ -105,7 +105,7 @@ pageextension 50126 "SalesInvoiceExt" extends "Sales Invoice"
             
     
 
-                part(Endingtextlines; "Ending Text Subpage")
+                part(Endingtextlines; "Zyn_Ending Text Subpage")
                 {
                     SubPageLink = "document_no." = FIELD("No."),
                     "Selection" = const(Zyn_Selection::Ending);

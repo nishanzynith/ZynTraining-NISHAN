@@ -1,4 +1,4 @@
-pageextension 50129 "SalesorderExt" extends "Sales Order"
+pageextension 50129 "Zyn_Sales Order Ext" extends "Sales Order"
 {
     layout
     {
@@ -13,7 +13,7 @@ pageextension 50129 "SalesorderExt" extends "Sales Order"
                 }
 
 
-                part(BeginningTextLines; "Beginning Text Subpage")
+                part(BeginningTextLines; "Zyn_Beginning Text Subpage")
                 {
 
                     SubPageLink = "document_no." = FIELD("No."),
@@ -31,7 +31,7 @@ pageextension 50129 "SalesorderExt" extends "Sales Order"
 
 
 
-                part(Endingtextlines; "Ending Text Subpage")
+                part(Endingtextlines; "Zyn_Ending Text Subpage")
                 {
 
                     SubPageLink = "document_no." = FIELD("No."),
@@ -71,7 +71,7 @@ pageextension 50129 "SalesorderExt" extends "Sales Order"
     }
     local procedure MyProcedure("Customer No.": code[20]): Decimal
     var
-        LastPriceFinder: Record "last price finder";
+        LastPriceFinder: Record "Zyn_Last Price Finder";
         salesinvline : record "Sales Invoice Line";
         LastDate: Date;
         lastPrice: Decimal;
