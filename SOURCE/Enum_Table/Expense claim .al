@@ -1,8 +1,8 @@
-enum 50110 Expenseclaim
+enum 50110 Zyn_Expenseclaim
 {
     Extensible = true;
-    
-    value(0;pending)
+
+    value(0; pending)
     {
         Caption = 'Pending';
     }
@@ -12,7 +12,7 @@ enum 50110 Expenseclaim
         Caption = 'Approved';
     }
 
-    value(2;Rejected)
+    value(2; Rejected)
     {
         Caption = 'Rejected';
     }

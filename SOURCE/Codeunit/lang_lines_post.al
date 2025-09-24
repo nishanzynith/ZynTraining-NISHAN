@@ -1,4 +1,4 @@
-codeunit 50123 postsalesinv
+codeunit 50123 Zyn_postsalesinv
 {
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", OnAfterSalesInvHeaderInsert, '', false, false)]
     procedure postedinvoice(var SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
@@ -265,7 +265,7 @@ codeunit 50123 postsalesinv
     procedure HandlingTextLines(
         SalesRec: Record "Sales Header";
         TextCode: Code[20];
-        Selection: Enum "Selection")
+        Selection: Enum Zyn_Selection)
     var
         ExtText: Record "Extended Text Line";
         Buffer: Record "Beginning Text Line";

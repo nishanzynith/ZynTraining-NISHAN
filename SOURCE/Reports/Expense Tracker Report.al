@@ -1,4 +1,4 @@
-report 50103 "Expense Tracker Report"
+report 50103 "Zyn_Expense Tracker Report"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

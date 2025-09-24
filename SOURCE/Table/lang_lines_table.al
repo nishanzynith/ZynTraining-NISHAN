@@ -38,11 +38,11 @@ table 50100 "Beginning Text Line"
             DataClassification = CustomerContent;
         }
 
-        field(8; Selection; enum Selection)
+        field(8; Selection; enum Zyn_Selection)
         {
             DataClassification = CustomerContent;
         }
-        field(9;num;integer)
+        field(9; num; integer)
         {
             DataClassification = CustomerContent;
         }
@@ -50,7 +50,7 @@ table 50100 "Beginning Text Line"
 
     keys
     {
-        key(PK; "Line No.", text, "Customer No.", "document_no.", Selection,Document_type,num)
+        key(PK; "Line No.", text, "Customer No.", "document_no.", Selection, Document_type, num)
         {
             Clustered = true;
         }

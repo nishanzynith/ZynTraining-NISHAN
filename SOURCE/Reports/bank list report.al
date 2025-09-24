@@ -1,4 +1,4 @@
-report 50136 "Bank Report"
+report 50136 "Zyn_Bank Account Report"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

@@ -1,4 +1,4 @@
-codeunit 50170 "Remaining Calculator"
+codeunit 50170 "Zyn_Remaining Budget Calc"
 {
     procedure CalcRemaining(CategoryCode: Code[20]): Decimal
     var
@@ -14,8 +14,8 @@ codeunit 50170 "Remaining Calculator"
         if CategoryCode = '' then
             exit(0);
 
-        
-        StartDate := CalcDate('<-CM>',WorkDate());
+
+        StartDate := CalcDate('<-CM>', WorkDate());
         EndDate := Calcdate('<CM>', StartDate);
 
         ExpenseRec.Reset();

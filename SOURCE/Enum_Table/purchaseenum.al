@@ -1,7 +1,7 @@
-enum 50100 "Purchase Approval Status"
+enum 50100 "Zyn_Purchase Approval Status"
 {
     Extensible = false;
-    Caption = 'Approval Status';
+    Caption = 'Purchase Approval Status';
 
     value(0; Open)
     {
@@ -22,5 +22,5 @@ enum 50100 "Purchase Approval Status"
     {
         Caption = 'Approved';
     }
-    
+
 }

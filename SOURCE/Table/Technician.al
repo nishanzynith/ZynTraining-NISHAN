@@ -7,7 +7,7 @@ table 50114 Technician_table
         field(1; "Tech ID"; Code[20])
         {
             DataClassification = CustomerContent;
-            editable =false;
+            editable = false;
         }
 
         field(2; "Tech Name"; Text[50])
@@ -19,7 +19,7 @@ table 50114 Technician_table
         {
             DataClassification = CustomerContent;
         }
-        field(4; "department"; Enum Depatment_enum)
+        field(4; "department"; Enum "Zyn_Depatment_enum")
         {
             DataClassification = CustomerContent;
         }

@@ -54,7 +54,7 @@ pageextension 50126 "SalesInvoiceExt" extends "Sales Invoice"
                 part(BeginningTextLines; "Beginning Text Subpage")
                 {
                     SubPageLink = "document_no." = FIELD("No."),
-                    Selection = const(Selection::Begining);
+                    Selection = const(Zyn_Selection::Begining);
                     ApplicationArea = All;
              
 
@@ -108,7 +108,7 @@ pageextension 50126 "SalesInvoiceExt" extends "Sales Invoice"
                 part(Endingtextlines; "Ending Text Subpage")
                 {
                     SubPageLink = "document_no." = FIELD("No."),
-                    "Selection" = const(Selection::Ending);
+                    "Selection" = const(Zyn_Selection::Ending);
                     ApplicationArea = All;
 
                 }

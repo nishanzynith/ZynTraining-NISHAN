@@ -1,4 +1,4 @@
-enumextension 50118 "posted_enum" extends "Sales Document Type"
+enumextension 50118 "Zyn_Sales Document extension" extends "Sales Document Type"
 {
     value(6; Posted)
     {

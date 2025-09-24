@@ -1,4 +1,4 @@
-codeunit 50106 "Last Price Database Upgrade"
+codeunit 50106 "Zyn_LastPrice Database Upgrade"
 {
     Subtype = Upgrade;
 

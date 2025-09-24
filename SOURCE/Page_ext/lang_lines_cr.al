@@ -52,9 +52,8 @@ pageextension 50128 "SalescreditExt" extends "Sales Credit Memo"
                 {
                     SubPageLink = "document_no." = FIELD("No."),
                     Document_type = field("Document Type"),
-                    Selection = const(Selection::Begining);
+                    Selection = const(Zyn_Selection::Begining);
                     ApplicationArea = All;
-             
 
                 }
             
@@ -107,7 +106,7 @@ pageextension 50128 "SalescreditExt" extends "Sales Credit Memo"
                 {
                     SubPageLink = "document_no." = FIELD("No."),
                      Document_type = field("Document Type"),
-                    "Selection" = const(Selection::Ending);
+                    "Selection" = const(Zyn_Selection::Ending);
                     ApplicationArea = All;
 
                 }

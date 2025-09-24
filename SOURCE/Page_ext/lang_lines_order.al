@@ -17,7 +17,7 @@ pageextension 50129 "SalesorderExt" extends "Sales Order"
                 {
 
                     SubPageLink = "document_no." = FIELD("No."),
-                    Selection = const(Selection::Begining);
+                    Selection = const(Zyn_Selection::Begining);
                     ApplicationArea = All;
                 }
 
@@ -35,7 +35,7 @@ pageextension 50129 "SalesorderExt" extends "Sales Order"
                 {
 
                     SubPageLink = "document_no." = FIELD("No."),
-                    "Selection" = const(Selection::Ending);
+                    "Selection" = const(Zyn_Selection::Ending);
                     ApplicationArea = All;
                 }
 

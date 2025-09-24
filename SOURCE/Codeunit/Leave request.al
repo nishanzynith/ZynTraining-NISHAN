@@ -1,4 +1,4 @@
-codeunit 50104 "My Notification Actions"
+codeunit 50104 "Zyn_Leave Req Cue Mgt."
 {
     procedure OpenLeaveBalance(Notification: Notification)
     var
@@ -7,7 +7,7 @@ codeunit 50104 "My Notification Actions"
         LeavePage.Run();
     end;
 }
-codeunit 50105 "My Notification Mgt"
+codeunit 50105 "Zyn_Leave Req Notification Mgt"
 {
     //     procedure ShowLeaveBalanceNotification(EmployeeID: Code[20])
     // var
@@ -124,7 +124,7 @@ codeunit 50105 "My Notification Mgt"
 
         if LeaveReq.FindSet() then
             Notification.Message :=
-                StrSubstNo('Pending requests: %1',pending)
+                StrSubstNo('Pending requests: %1', pending)
         else
             Notification.Message := 'No approved leave requests found!';
 

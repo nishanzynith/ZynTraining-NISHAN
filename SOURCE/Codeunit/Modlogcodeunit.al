@@ -1,4 +1,4 @@
-codeunit 50122 "Customer Modify Logger"
+codeunit 50122 "Zyn_Customer Modify Logger"
 
 {
 

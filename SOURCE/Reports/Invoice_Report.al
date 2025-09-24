@@ -1,4 +1,4 @@
-report 50135 "Invoice report"
+report 50135 "Zyn_Sales Invoice Report"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
@@ -51,7 +51,7 @@ report 50135 "Invoice report"
             trigger OnAfterGetRecord()
             begin
                 // if Found then begin
-                "sale invoice".SetRange("Document Type","sale invoice"."Document Type"::Invoice);
+                "sale invoice".SetRange("Document Type", "sale invoice"."Document Type"::Invoice);
                 "sale invoice".SetRange("No.", "sale invoice"."No.");
 
                 SalesPost.Run("sale invoice");

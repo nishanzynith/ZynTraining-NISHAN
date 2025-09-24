@@ -39,7 +39,7 @@ table 50109 "Leave Request"
             DataClassification = ToBeClassified;
         }
 
-        field(7; Status; enum "Leave Approval Status")
+        field(7; Status; enum "Zyn_Leave Approval Status")
         {
             DataClassification = ToBeClassified;
             InitValue = Pending;

@@ -11,11 +11,11 @@ pageextension 50137 "Bank Report ext" extends "Customer List"
                 Image = BankAccountStatement;
                 trigger OnAction()
                 begin
-                    Report.run(Report::"Bank Report")
+                    Report.run(Report::"Zyn_Bank Account Report")
                 end;
             }
         }
-         addfirst(processing)
+        addfirst(processing)
         {
             action(Postedinvreport)
             {
@@ -24,13 +24,13 @@ pageextension 50137 "Bank Report ext" extends "Customer List"
                 Image = PostedCreditMemo;
                 trigger OnAction()
                 begin
-                    Report.run(Report::"Posted invoice report")
+                    Report.run(Report::"Zyn_Posted SalesInvoice Report")
                 end;
             }
         }
     }
     // trigger OnOpenPage()
-  
+
     // var
     //     StartCM: Date;
     //     EndCM: Date;

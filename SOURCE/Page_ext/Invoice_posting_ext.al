@@ -17,7 +17,7 @@ pageextension 50135 Salesinvoiceposting extends "Sales Invoice list"
 
                 trigger OnAction()
                 begin
-                    Report.Run(report::"Invoice report")
+                    Report.Run(report::"Zyn_Sales Invoice Report")
                 end;
 
             }

@@ -1,4 +1,4 @@
-  codeunit 50102 "Process Recurring Expenses"
+  codeunit 50102 "Zyn_Recurring Expense Process"
 {
     Subtype = Normal;
 

@@ -25,7 +25,7 @@ table 50105 "Recurring Expense"
 
         }
 
-        field(4; "Cycling Period"; Enum "Cycling Period")
+        field(4; "Cycling Period"; Enum "Zyn_Cycling Period")
         {
             DataClassification = ToBeClassified;
             Caption = 'Cycling Period';

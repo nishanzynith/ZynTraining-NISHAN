@@ -1,13 +1,13 @@
-enum 50103 "Employee Roles"
+enum 50103 "Zyn_Employee Roles"
 {
     Extensible = true;
-    
-    value(0;"Developer")
+
+    value(0; "Developer")
     {
         Caption = 'Developer';
     }
 
-    value(1;"Junior Developer")
+    value(1; "Junior Developer")
     {
         Caption = 'Junior Developer';
     }
@@ -17,7 +17,7 @@ enum 50103 "Employee Roles"
         Caption = 'Senior Developer';
     }
 
-    value(3;"HR employee")
+    value(3; "HR employee")
     {
         Caption = 'HR Employee';
     }

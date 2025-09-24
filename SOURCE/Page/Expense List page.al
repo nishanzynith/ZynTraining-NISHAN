@@ -13,11 +13,11 @@ page 50152 "Expense List"
         {
             repeater(Group)
             {
-                field("No."; rec."No."){}
-                field(Date; rec.Date){}
-                field(Amount; rec.Amount){}
-                field(Category; rec.Category){}
-                field(Description; rec.Description){}
+                field("No."; rec."No.") { }
+                field(Date; rec.Date) { }
+                field(Amount; rec.Amount) { }
+                field(Category; rec.Category) { }
+                field(Description; rec.Description) { }
             }
         }
 
@@ -46,7 +46,7 @@ page 50152 "Expense List"
                 end;
             }
 
-             action(GenerateExpenseReport)
+            action(GenerateExpenseReport)
             {
                 Caption = 'Generate Expense Report';
                 ApplicationArea = All;
@@ -54,7 +54,7 @@ page 50152 "Expense List"
 
                 trigger OnAction()
                 var
-                    ExpenseReport: Report "Expense Tracker Report";
+                    ExpenseReport: Report "Zyn_Expense Tracker Report";
                 begin
                     ExpenseReport.Run();
                 end;

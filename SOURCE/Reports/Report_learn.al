@@ -1,4 +1,4 @@
-report 50134 Datareport
+report 50134 "Zyn_Datechange process Report"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

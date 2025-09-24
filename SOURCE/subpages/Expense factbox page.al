@@ -174,7 +174,7 @@ page 50154 "Expense & Budget Factbox"
     }
 
     var
-        Calculator: Codeunit "Expense & Budget Calculator";
+        Calculator: Codeunit "Zyn_Expense&BudgetCalculator";
         Remaining: Decimal;
         ThisMonthExpense: Decimal;
         ThisQuarterExpense: Decimal;
@@ -187,7 +187,7 @@ page 50154 "Expense & Budget Factbox"
 
     trigger OnAfterGetRecord()
     var
-        RemainingCalc: Codeunit "Remaining Calculator";
+        RemainingCalc: Codeunit "Zyn_Remaining Budget Calc";
     begin
         if Rec.Code <> '' then
             Remaining := RemainingCalc.CalcRemaining(Rec.Code)

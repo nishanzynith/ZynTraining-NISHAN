@@ -25,7 +25,7 @@ page 50143 "Income List"
                 {
                     ApplicationArea = All;
                 }
-                field("Description";rec."Description")
+                field("Description"; rec."Description")
                 {
                     ApplicationArea = All;
                 }
@@ -57,7 +57,7 @@ page 50143 "Income List"
 
                 trigger OnAction()
                 var
-                    IncomeReport: Report "Income Tracker Report";
+                    IncomeReport: Report "Zyn_Income Tracker Report";
                 begin
                     IncomeReport.Run();
                 end;
@@ -65,9 +65,9 @@ page 50143 "Income List"
         }
     }
 
-   
+
     trigger OnOpenPage()
     begin
-        
+
     end;
 }

@@ -1,4 +1,4 @@
-report 50104 "Income Tracker Report"
+report 50104 "Zyn_Income Tracker Report"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

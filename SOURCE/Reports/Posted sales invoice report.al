@@ -1,4 +1,4 @@
-report 50137 "Posted invoice report"
+report 50137 "Zyn_Posted SalesInvoice Report"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

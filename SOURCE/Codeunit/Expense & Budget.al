@@ -1,4 +1,4 @@
-codeunit 50155 "Expense & Budget Calculator"
+codeunit 50155 "Zyn_Expense&BudgetCalculator"
 {
     Subtype = Normal;
 
@@ -138,8 +138,8 @@ codeunit 50155 "Expense & Budget Calculator"
         exit(Sum);
     end;
 
-    
-     procedure GetThisMonthDates(var StartDate: Date; var EndDate: Date)
+
+    procedure GetThisMonthDates(var StartDate: Date; var EndDate: Date)
     begin
         StartDate := CalcDate('-CM', WorkDate());
         EndDate := CalcDate('<CM>', WorkDate());
@@ -151,7 +151,7 @@ codeunit 50155 "Expense & Budget Calculator"
         EndDate := CalcDate('<CQ>', WorkDate());
     end;
 
-     procedure GetThisHalfYearDates(var StartDate: Date; var EndDate: Date)
+    procedure GetThisHalfYearDates(var StartDate: Date; var EndDate: Date)
     var
         CurrentMonth: Integer;
         CurrentYear: Integer;

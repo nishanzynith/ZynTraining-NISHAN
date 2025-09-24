@@ -1,4 +1,4 @@
-enum 50105 "Leave Approval Status"
+enum 50105 "Zyn_Leave Approval Status"
 {
     Extensible = false;
     Caption = 'Approval Status';

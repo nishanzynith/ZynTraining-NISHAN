@@ -10,9 +10,9 @@ tableextension 50103 LanglinesExt extends "Sales Header"
             trigger OnValidate()
 
             var
-                TextLineHandler: Codeunit postsalesinv;
+                TextLineHandler: Codeunit Zyn_postsalesinv;
             begin
-                TextLineHandler.HandlingTextLines(Rec, Rec."Beginning Text Code", Enum::"Selection"::Begining);
+                TextLineHandler.HandlingTextLines(Rec, Rec."Beginning Text Code", Enum::Zyn_Selection::Begining);
             end;
             // var
             //     ExtText: Record "Extended Text Line";
@@ -56,9 +56,9 @@ tableextension 50103 LanglinesExt extends "Sales Header"
             trigger OnValidate()
 
             var
-                TextLineHandler: Codeunit postsalesinv;
+                TextLineHandler: Codeunit Zyn_postsalesinv;
             begin
-                TextLineHandler.HandlingTextLines(Rec, Rec."Ending text code", Enum::"Selection"::Ending);
+                TextLineHandler.HandlingTextLines(Rec, Rec."Ending text code", Enum::Zyn_Selection::Ending);
             end;
             // var
             //     ExtText: Record "Extended Text Line";
@@ -114,7 +114,7 @@ tableextension 50103 LanglinesExt extends "Sales Header"
             caption = 'Last Sold Price';
             // FieldClass = FlowField;
             // CalcFormula = max("last price finder"."Item Price" where("Customer No." = field("Sell-to Customer No."), "Posting date" = field("Posting Date")));
-          DataClassification = SystemMetadata;
+            DataClassification = SystemMetadata;
         }
 
 
@@ -126,12 +126,12 @@ tableextension 50103 LanglinesExt extends "Sales Header"
     begin
 
         BeginningTextLine.SetRange("document_no.", Rec."No.");
-        BeginningTextLine.SetRange(Selection, Selection::Begining);
+        BeginningTextLine.SetRange(Selection, Zyn_Selection::Begining);
         BeginningTextLine.DeleteAll();
 
 
         EndingTextLine.SetRange("document_no.", Rec."No.");
-        EndingTextLine.SetRange(Selection, Selection::Ending);
+        EndingTextLine.SetRange(Selection, Zyn_Selection::Ending);
         EndingTextLine.DeleteAll();
     end;
 

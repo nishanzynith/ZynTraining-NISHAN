@@ -1,7 +1,7 @@
-enum 50104 "Employee Department"
+enum 50104 "Zyn_Employee Department"
 {
     Extensible = true;
-    
+
     value(0; HR)
     {
         Caption = 'HR';

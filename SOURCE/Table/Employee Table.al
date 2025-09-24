@@ -14,12 +14,12 @@ table 50106 "Employee Table"
         {
             DataClassification = ToBeClassified;
         }
-        field(3; "Department"; enum "Employee Department")
+        field(3; "Department"; enum "Zyn_Employee Department")
         {
             DataClassification = ToBeClassified;
         }
 
-        field(4; "Role"; enum "Employee Roles")
+        field(4; "Role"; enum "Zyn_Employee Roles")
         {
             DataClassification = ToBeClassified;
             // trigger OnLookup()

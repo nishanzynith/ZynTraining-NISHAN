@@ -14,7 +14,7 @@ pageextension 50124 "posted Invoice Page Ext" extends "Posted Sales Invoice"
             {
                 SubPageLink = "document_no." = FIELD("No."),
                 Document_type = const("Posted"),
-                Selection = const(Selection::Begining);
+                Selection = const(Zyn_Selection::Begining);
                 ApplicationArea = all;
                 editable = false;
             }
@@ -29,7 +29,7 @@ pageextension 50124 "posted Invoice Page Ext" extends "Posted Sales Invoice"
             {
                 SubPageLink = "document_no." = FIELD("No."),
                 Document_type = const("Posted"),
-                Selection = const(Selection::Ending);
+                Selection = const(Zyn_Selection::Ending);
                 ApplicationArea = all;
                 editable = false;
             }

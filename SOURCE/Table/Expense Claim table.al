@@ -36,7 +36,7 @@ table 50119 ExpenseClaimTable
             DataClassification = ToBeClassified;
         }
 
-        field(6; Status; enum Expenseclaim)
+        field(6; Status; enum Zyn_Expenseclaim)
         {
             DataClassification = ToBeClassified;
         }
@@ -98,5 +98,5 @@ table 50119 ExpenseClaimTable
     //         ClaimID := 'C' + Format(LastId + 1);
     //     end;
     // end;
-    
+
 }

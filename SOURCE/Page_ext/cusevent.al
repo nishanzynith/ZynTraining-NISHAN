@@ -21,7 +21,7 @@ pageextension 50103 "Customer Card Validate Ext" extends "Customer Card"
 
     trigger OnClosePage()
     var
-        Publisher: Codeunit Customereventpublisher;
+        Publisher: Codeunit Zyn_Customereventpublisher;
     begin
         if IsNewCustomer and (Rec.Name <> '') then
             Publisher.OnNewCustomerCreated(Rec.Name);

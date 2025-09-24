@@ -13,7 +13,7 @@ pageextension 50130 "posted credit Page Ext" extends "Posted Sales Credit Memo"
             part("Posted Beginning Text Subpage"; "Posted Beginning Text")
             {
                 SubPageLink = "document_no." = FIELD("No."),
-                Selection = const(Selection::Begining);
+                Selection = const(Zyn_Selection::Begining);
                 ApplicationArea = all;
                 editable = false;
             }
@@ -27,7 +27,7 @@ pageextension 50130 "posted credit Page Ext" extends "Posted Sales Credit Memo"
             part("Posted ending Text Subpage"; "Posted Ending Text")
             {
                 SubPageLink = "document_no." = FIELD("No."),
-                Selection = const(Selection::Ending);
+                Selection = const(Zyn_Selection::Ending);
                 ApplicationArea = all;
                 editable = false;
             }

@@ -59,7 +59,7 @@ table 50151 "Expense Entry"
             // end;
             trigger OnValidate()
             var
-                RemainingCalc: Codeunit "Remaining Calculator";
+                RemainingCalc: Codeunit "Zyn_Remaining Budget Calc";
             begin
                 "Remaining" := RemainingCalc.CalcRemaining(Category);
             end;
@@ -81,7 +81,7 @@ table 50151 "Expense Entry"
     {
         key(PK; "No.") { Clustered = true; }
 
-        key(key1; date,Category ) { }
+        key(key1; date, Category) { }
     }
 
 

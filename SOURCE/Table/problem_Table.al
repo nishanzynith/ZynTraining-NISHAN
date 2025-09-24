@@ -15,11 +15,11 @@ table 50107 "Customer Problem"
             DataClassification = SystemMetadata;
         }
 
-        field(3; Problem; Enum "Problem Type")
+        field(3; Problem; Enum "Zyn_Problem Type")
         {
             DataClassification = CustomerContent;
         }
-        field(4; Department; Enum Depatment_enum)
+        field(4; Department; Enum "Zyn_Depatment_enum")
         {
             DataClassification = CustomerContent;
         }

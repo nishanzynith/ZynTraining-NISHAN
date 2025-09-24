@@ -1,7 +1,7 @@
-enum 50117 "Problem Type"
+enum 50117 "Zyn_Problem Type"
 {
     Extensible = true;
- 
+
     value(0; "Slow Internet") { Caption = 'Slow Internet'; }
     value(1; "System Crash") { Caption = 'System Crash'; }
     value(2; "Hardware Failure") { Caption = 'Hardware Failure'; }

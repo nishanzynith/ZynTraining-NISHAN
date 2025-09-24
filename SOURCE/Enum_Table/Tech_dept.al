@@ -1,8 +1,8 @@
-enum 50118 "Depatment_enum"
+enum 50118 "Zyn_Depatment_enum"
 {
-    
+
     Extensible = false;
-    Caption = 'Department';
+    Caption = 'Departments';
 
     value(0; IT)
     {
@@ -19,5 +19,5 @@ enum 50118 "Depatment_enum"
         Caption = 'HardWare';
     }
 
-    
+
 }

@@ -1,4 +1,4 @@
-report 50106 "Expense Yearly Summary"
+report 50106 "Zyn_Expense Yearly Report"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
