@@ -1,6 +1,7 @@
 table 50121 "Zynith_Company"
 {
     Caption = 'Zynith Company';
+    DataPerCompany = false;
 
     fields
     {
@@ -29,6 +30,37 @@ table 50121 "Zynith_Company"
         {
             Caption = 'Business Profile Id';
         }
+
+        field(4; "Is Master"; Boolean)
+        {
+            Caption = 'Is Master';
+            ToolTip = 'Select Your Master Company.';
+            trigger OnValidate()
+            var
+                Zyn_company: Record Zynith_Company;
+            begin
+                if "Is Master" then begin
+                    // Check if another record is already true
+                    Zyn_company.Reset();
+                    Zyn_company.SetRange("Is Master", true);
+                    if Zyn_company.FindFirst() then
+                        if Zyn_company.Name <> Rec.Name then
+                            Error(comperr, Zyn_company.Name);
+                end;
+            end;
+        }
+
+        field(5; "Master Company"; Text[30])
+        {
+            Caption = 'Master Company';
+            ToolTip = 'This is the Master Company ';
+            TableRelation = Zynith_Company.Name;
+            trigger OnValidate()
+            begin
+                if ("Is Master") or (Rec.Name = rec."Master Company") then
+                    Error(Mastercomperr, rec.Name);
+            end;
+        }
     }
 
     keys
@@ -40,38 +72,7 @@ table 50121 "Zynith_Company"
     }
 
     var
-    nameerr : label 'Name cannot be changed once filled.';
-
-    // trigger OnInsert()
-    // var
-    //     Sys_Company: Record Company;
-    // begin
-    //     if Rec.Get(Rec.Name) then begin
-    //         Rec.Init();
-    //         if Rec.Id.ToText() = '' then
-    //             Rec.Id := CreateGuid(); // Ensure non-empty GUID
-    //         Rec.Insert(true);
-    //     end;
-    // end;
-
-    // trigger OnModify()
-    // var
-    //     Sys_Company: Record Company;
-    // begin
-    //     if Sys_Company.Get(Rec.Name) then begin
-    //         Sys_Company."Evaluation Company" := rec."Evaluation Company";
-    //         Sys_Company."Display Name" := Rec."Display Name";
-    //         Sys_Company.Id := rec.Id;
-    //         Sys_Company."Business Profile Id" := Rec."Business Profile Id";;
-    //         Sys_Company.Modify();
-    //     end;
-    // end;
-
-    // trigger OnDelete()
-    // var
-    //     Sys_Company: Record Company;
-    // begin
-    //     if Sys_Company.Get(Rec.Name) then
-    //         Sys_Company.Delete();
-    // end;
+        nameerr: label 'Name cannot be changed once filled.';
+        comperr: label 'Only one Company can be selected as Master in a time .Company :%1 is already selected.';
+        mastercomperr: label 'The company: %1 has been selected. Cannot assign another company to a Master Company Or to Itself';
 }

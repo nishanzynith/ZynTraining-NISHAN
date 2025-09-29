@@ -31,34 +31,6 @@ codeunit 50123 Zyn_postsalesinv
         end;
     end;
 
-    // [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", OnAfterSalesInvHeaderInsert, '', false, false)]
-    // procedure postedendinvoice(var SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
-    // var
-    //     PostedExtendedTextTable: Record "Beginning Text Line";
-    //     ExtendedTextTable: Record "Beginning Text Line";
-    // begin
-    //     SalesInvHeader."Ending Text code" := SalesHeader."Ending text code";
-    //     ExtendedTextTable.SetRange("document_no.", SalesHeader."No.");
-
-    //     if ExtendedTextTable.FindSet() then begin
-    //         repeat
-    //             PostedExtendedTextTable.Init();
-    //             PostedExtendedTextTable."document_no." := SalesInvHeader."No.";
-    //             PostedExtendedTextTable.Selection := ExtendedTextTable.Selection;
-    //             PostedExtendedTextTable."ending text" := ExtendedTextTable."ending text";
-    //             PostedExtendedTextTable."Line No." := ExtendedTextTable."Line No.";
-    //             PostedExtendedTextTable.Document_type := ExtendedTextTable."Document_Type"::Posted;
-    //             PostedExtendedTextTable.Text := ExtendedTextTable.Text;
-    //             PostedExtendedTextTable.insert();
-
-    //         until ExtendedTextTable.Next() = 0;
-    //     end;
-    //     ExtendedTextTable.SetRange("document_no.", SalesHeader."No.");
-    //     if ExtendedTextTable.FindSet() then begin
-    //         ExtendedTextTable.DeleteAll();
-    //     end;
-    // end;
-
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", OnAfterSalesCrMemoHeaderInsert, '', false, false)]
     procedure postedcredit(var SalesCrMemoHeader: Record "Sales Cr.Memo Header"; SalesHeader: Record "Sales Header"; CommitIsSuppressed: Boolean; WhseShip: Boolean; WhseReceive: Boolean; var TempWhseShptHeader: Record "Warehouse Shipment Header"; var TempWhseRcptHeader: Record "Warehouse Receipt Header")
     var
@@ -87,34 +59,6 @@ codeunit 50123 Zyn_postsalesinv
             ExtendedTextTable.DeleteAll();
         end;
     end;
-
-    //     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", OnAfterSalesCrMemoHeaderInsert, '', false, false)]
-    //     procedure postedendcredit(var SalesCrMemoHeader: Record "Sales Cr.Memo Header"; SalesHeader: Record "Sales Header"; CommitIsSuppressed: Boolean; WhseShip: Boolean; WhseReceive: Boolean; var TempWhseShptHeader: Record "Warehouse Shipment Header"; var TempWhseRcptHeader: Record "Warehouse Receipt Header")
-    //     var
-    //         PostedExtendedTextTable: Record "Beginning Text Line";
-    //         ExtendedTextTable: Record "Beginning Text Line";
-    //     begin
-    //         SalesCrMemoHeader."Ending Text code" := SalesHeader."Ending text code";
-    //         ExtendedTextTable.SetRange("document_no.", SalesHeader."No.");
-
-    //         if ExtendedTextTable.FindSet() then begin
-    //             repeat
-    //                 PostedExtendedTextTable.Init();
-    //                 PostedExtendedTextTable."document_no." := SalesCrMemoHeader."No.";
-    //                 PostedExtendedTextTable.Selection := ExtendedTextTable.Selection;
-    //                 PostedExtendedTextTable."ending text" := ExtendedTextTable."ending text";
-    //                 PostedExtendedTextTable."Line No." := ExtendedTextTable."Line No.";
-    //                 PostedExtendedTextTable.Document_type := ExtendedTextTable."Document_Type"::Posted;
-    //                 PostedExtendedTextTable.Text := ExtendedTextTable.Text;
-    //                 PostedExtendedTextTable.insert();
-
-    //             until ExtendedTextTable.Next() = 0;
-    //         end;
-    //         ExtendedTextTable.SetRange("document_no.", SalesHeader."No.");
-    //         if ExtendedTextTable.FindSet() then begin
-    //             ExtendedTextTable.DeleteAll();
-    //         end;
-    //     end;
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Quote to Order", OnAfterInsertSalesOrderHeader, '', false, false)]
     procedure postedQuotevar(SalesOrderHeader: Record "Sales Header"; SalesQuoteHeader: Record "Sales Header")
@@ -217,51 +161,6 @@ codeunit 50123 Zyn_postsalesinv
         end;
     end;
 
-    //     if PostedExtendedTextTable.FindSet() then begin
-    //         repeat
-    //             PostedExtendedTextTable.Init();
-    //             PostedExtendedTextTable."document_no." := SalesInvHeader."No.";
-    //             PostedExtendedTextTable.Document_type := PostedExtendedTextTable."Document_Type"::"Posted";
-    //             PostedExtendedTextTable.Text := ExtendedTextTable.Text;
-    //             PostedExtendedTextTable.Selection := PostedExtendedTextTable.Selection::Begining;
-    //             PostedExtendedTextTable.insert();
-
-    //         until ExtendedTextTable.Next() = 0;
-    //     end;
-    //     PostedExtendedTextTable.SetRange("document_no.", SalesHeader."No.");
-    //     if PostedExtendedTextTable.FindSet() then begin
-    //         PostedExtendedTextTable.DeleteAll();
-    //     end;
-    // end;
-
-
-    // [EventSubscriber(ObjectType::Codeunit, codeunit::"Sales-Post", OnAfterSalesInvHeaderInsert, '', false, false)]
-    // procedure postedorderinvoiceend(var SalesInvHeader: Record "Sales Invoice Header"; SalesHeader: Record "Sales Header")
-    // var
-    //     PostedExtendedTextTable: Record "Beginning Text Line";
-    //     ExtendedTextTable: Record "Extended Text Line";
-    // begin
-    //     SalesInvHeader."Invoice beginning Text code" := SalesHeader."Invoice begining Text Code";
-    //     SalesInvHeader."invoice ending Text code" := SalesHeader."Invoice Ending Text Code";
-    //     ExtendedTextTable.SetRange("No.", SalesInvHeader."invoice ending Text code");
-    //     ExtendedTextTable.SetRange("Language Code", SalesHeader."Language Code");
-
-    //     if PostedExtendedTextTable.FindSet() then begin
-    //         repeat
-    //             PostedExtendedTextTable.Init();
-    //             PostedExtendedTextTable."document_no." := SalesInvHeader."No.";
-    //             PostedExtendedTextTable.Document_type := PostedExtendedTextTable."Document_Type"::"Posted";
-    //             PostedExtendedTextTable.Text := ExtendedTextTable.Text;
-    //             PostedExtendedTextTable.Selection := PostedExtendedTextTable.Selection::Ending;
-    //             PostedExtendedTextTable.insert();
-
-    //         until ExtendedTextTable.Next() = 0;
-    //     end;
-    //     PostedExtendedTextTable.SetRange("document_no.", SalesHeader."No.");
-    //     if PostedExtendedTextTable.FindSet() then begin
-    //         PostedExtendedTextTable.DeleteAll();
-    //     end;
-    // end;
     procedure HandlingTextLines(
         SalesRec: Record "Sales Header";
         TextCode: Code[20];

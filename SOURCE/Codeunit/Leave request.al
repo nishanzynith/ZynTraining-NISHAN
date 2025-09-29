@@ -9,30 +9,7 @@ codeunit 50104 "Zyn_Leave Req Cue Mgt."
 }
 codeunit 50105 "Zyn_Leave Req Notification Mgt"
 {
-    //     procedure ShowLeaveBalanceNotification(EmployeeID: Code[20])
-    // var
-    //     Notification: Notification;
-    //     LeaveReq: Record "Leave Request";
-    // begin
-    //     LeaveReq.Reset();
-    //     LeaveReq.SetRange("Employee ID", EmployeeID);
-    //     LeaveReq.SetRange(Status, LeaveReq.Status::Approved);
-
-    //     // Pick the latest Approved leave by Request No. or Date
-    //     if LeaveReq.FindLast() then begin
-    //         Notification.Message :=
-    //           StrSubstNo('Your leave balance is : %1 !', LeaveReq."Remaining Days");
-    //     end else begin
-    //         Notification.Message := 'No approved leave requests found!';
-    //     end;
-
-    //     Notification.Scope := NotificationScope::LocalScope;
-    //     Notification.AddAction('View Balance', Codeunit::"My Notification Actions", 'OpenLeaveBalance');
-    //     Notification.Send();
-    // end;
-
-
-    procedure ShowLeaveBalanceNotification()
+   procedure ShowLeaveBalanceNotification()
     var
         Notification: Notification;
         LeaveReq: Record "Zyn_Leave Request";

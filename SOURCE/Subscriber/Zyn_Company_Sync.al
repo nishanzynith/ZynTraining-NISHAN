@@ -15,7 +15,7 @@ codeunit 50111 "Zyn_Company Sync"
             Zyn_Company."Display Name" := Rec."Display Name";
             Zyn_Company.Id := rec.Id;
             Zyn_Company."Business Profile Id" := Rec."Business Profile Id";
-            Zyn_Company.Insert();
+            Zyn_Company.Insert(true);
         end;
     end;
 
@@ -64,7 +64,6 @@ codeunit 50111 "Zyn_Company Sync"
             if Rec.Id.ToText() = '' then
                 Sys_Company.Id := CreateGuid();
             Sys_Company.Insert();
-            Sys_Company.TransferFields(Rec); // false = don’t overwrite existing fields not in Rec
         end;
     end;
 
