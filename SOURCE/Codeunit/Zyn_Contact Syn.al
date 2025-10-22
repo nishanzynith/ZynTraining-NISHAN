@@ -7,12 +7,12 @@ codeunit 50117 "ContactSyncMgt."
     [EventSubscriber(ObjectType::Table, Database::Contact, 'OnBeforeInsertEvent', '', true, true)]
     local procedure ValidateContactInsert(var Rec: Record Contact; RunTrigger: Boolean)
     var
-        ZynithCompany: Record "Zynith_Company";
+        ZynCompany: Record Zynith_Company;
     begin
-        // Validate that the current company is selected
-
-        if (not ZynithCompany."Is Master") and (ZynithCompany."Master Company" <> '') then
-            Error('Cannot create contact. The company "%1" is not Master.', CompanyName);
+        if ZynCompany.Get(COMPANYNAME) then begin
+            if (not ZynCompany."Is Master") and (ZynCompany."Master Company" <> '') then
+                Error(CreateContactInSlaveErr);
+        end;
     end;
     // ---------------------------------------------------------------------------------------------------
     [EventSubscriber(ObjectType::Table, Database::Contact, 'OnAfterInsertEvent', '', true, true)]
@@ -175,84 +175,178 @@ codeunit 50117 "ContactSyncMgt."
     // ---------------------------------------------------------------------------------------------------------------
 
     [EventSubscriber(ObjectType::Table, Database::Contact, 'OnAfterModifyEvent', '', true, true)]
+    // local procedure ContactOnAfterModify(var Rec: Record Contact; var xRec: Record Contact; RunTrigger: Boolean)
+    // var
+    //     MasterCompany: Record Zynith_Company;
+    //     SlaveCompany: Record Zynith_Company;
+    //     CurrentCompany: Record Zynith_Company;
+    //     SlaveContact: Record Contact;
+    //     MasterRef: RecordRef;
+    //     SlaveRef: RecordRef;
+    //     Field: FieldRef;
+    //     SlaveField: FieldRef;
+    //     i: Integer;
+    //     IsDifferent: Boolean;
+    //     OldSlaveBusinessRelationCode: enum "Contact Business Relation";
+
+    // begin
+    //     if IsSyncing then
+    //         exit;
+
+
+    //     if MasterCompany.Get(COMPANYNAME) then begin
+    //         if MasterCompany."Is Master" then begin
+    //             // Master company -> replicate to slaves
+    //             SlaveCompany.Reset();
+    //             SlaveCompany.SetRange("Master Company", MasterCompany.Name);
+    //             if SlaveCompany.FindSet() then
+    //                 repeat
+    //                     SlaveContact.ChangeCompany(SlaveCompany.Name);
+    //                     if SlaveContact.Get(Rec."No.") then begin
+    //                         OldSlaveBusinessRelationCode := SlaveContact."Contact Business Relation";
+    //                         MasterRef.GetTable(Rec);
+    //                         SlaveRef.GetTable(SlaveContact);
+    //                         IsDifferent := false;
+    //                         for i := 1 to MasterRef.FieldCount do begin
+    //                             Field := MasterRef.FieldIndex(i);
+    //                             if Field.Class <> FieldClass::Normal then
+    //                                 continue;
+    //                             if Field.Number in [1] then
+    //                                 continue;
+    //                             SlaveField := SlaveRef.Field(Field.Number);
+    //                             if SlaveField.Value <> Field.Value then begin
+    //                                 IsDifferent := true;
+    //                                 break;
+    //                             end;
+    //                         end;
+
+    //                         if IsDifferent then begin
+    //                             IsSyncing := true;
+    //                             SlaveContact.TransferFields(Rec, false);
+    //                             SlaveContact."Contact Business Relation" := OldSlaveBusinessRelationCode;
+    //                             SlaveContact."No." := Rec."No.";
+    //                             SlaveContact.Modify(true);
+    //                             IsSyncing := false;
+    //                         end;
+    //                     end;
+    //                 until SlaveCompany.Next() = 0;
+
+    //         end else begin
+    //             // // Otherwise block
+    //             Error(ModifyContactInSlaveErr, COMPANYNAME);
+    //         end;
+    //     end;
+    // end;
     local procedure ContactOnAfterModify(var Rec: Record Contact; var xRec: Record Contact; RunTrigger: Boolean)
     var
         MasterCompany: Record Zynith_Company;
         SlaveCompany: Record Zynith_Company;
-        CurrentCompany: Record Zynith_Company;
         SlaveContact: Record Contact;
+        SlaveBusRel: Record "Contact Business Relation";
+        SlaveCustomer: Record Customer;
+        SlaveVendor: Record Vendor;
         MasterRef: RecordRef;
         SlaveRef: RecordRef;
         Field: FieldRef;
         SlaveField: FieldRef;
         i: Integer;
         IsDifferent: Boolean;
-        OldSlaveBusinessRelationCode: enum "Contact Business Relation";
+        Relations: array[10] of Enum "Contact Business Relation";
+        RelCount: Integer;
+        NewRelation: Enum "Contact Business Relation";
     begin
         if IsSyncing then
             exit;
 
-        if MasterCompany.Get(COMPANYNAME) then begin
-            if MasterCompany."Is Master" then begin
-                // Master company -> replicate to slaves
-                SlaveCompany.Reset();
-                SlaveCompany.SetRange("Master Company", MasterCompany.Name);
-                if SlaveCompany.FindSet() then
-                    repeat
-                        SlaveContact.ChangeCompany(SlaveCompany.Name);
-                        if SlaveContact.Get(Rec."No.") then begin
-                            OldSlaveBusinessRelationCode := SlaveContact."Contact Business Relation";
+        if not MasterCompany.Get(CompanyName) then
+            exit;
 
-                            MasterRef.GetTable(Rec);
-                            SlaveRef.GetTable(SlaveContact);
-                            IsDifferent := false;
-                            for i := 1 to MasterRef.FieldCount do begin
-                                Field := MasterRef.FieldIndex(i);
-                                if Field.Class <> FieldClass::Normal then
-                                    continue;
-                                if Field.Number in [1] then
-                                    continue;
-                                SlaveField := SlaveRef.Field(Field.Number);
-                                if SlaveField.Value <> Field.Value then begin
-                                    IsDifferent := true;
-                                    break;
-                                end;
-                            end;
+        if not MasterCompany."Is Master" then
+            Error('You cannot modify Contacts directly in slave company %1. Modify them only in the Master company.', CompanyName);
 
-                            if IsDifferent then begin
-                                IsSyncing := true;
-                                SlaveContact.TransferFields(Rec, false);
-                                SlaveContact."Contact Business Relation" := OldSlaveBusinessRelationCode; // preserve relation
-                                SlaveContact."No." := Rec."No.";
-                                SlaveContact.Modify(true);
-                                IsSyncing := false;
-                            end;
-                        end;
-                    until SlaveCompany.Next() = 0;
+        // 🔹 Loop all slave companies
+        SlaveCompany.Reset();
+        SlaveCompany.SetRange("Master Company", MasterCompany.Name);
+        if not SlaveCompany.FindSet() then
+            exit;
 
-            end else begin
+        repeat
+            SlaveContact.ChangeCompany(SlaveCompany.Name);
 
-                if not CurrentCompany.Get(COMPANYNAME) then
-                    exit;
+            if not SlaveContact.Get(Rec."No.") then
+                continue;
 
-                if (not CurrentCompany."Is Master") and (CurrentCompany."Master Company" = '') then
-                    exit; // Standalone company -> allow any modifications
+            // 🔹 Compare fields except primary key and Contact Business Relation
+            MasterRef.GetTable(Rec);
+            SlaveRef.GetTable(SlaveContact);
+            IsDifferent := false;
 
-                // Slave company -> only allow system changes or relation updates
-                if not RunTrigger then
-                    exit; // system-driven change, allow it
+            for i := 1 to MasterRef.FieldCount do begin
+                Field := MasterRef.FieldIndex(i);
+                if Field.Class <> FieldClass::Normal then
+                    continue;
+                if (Field.Number = 1) or (Field.Number = Rec.FieldNo("Contact Business Relation")) then
+                    continue;
 
-                // Allow user change only if it's Business Relation creation/update
-                if Rec."Contact Business Relation" <> xRec."Contact Business Relation" then
-                    exit;
-
-                // Otherwise: block
-                Error(ModifyContactInSlaveErr, CompanyName);
+                SlaveField := SlaveRef.Field(Field.Number);
+                if SlaveField.Value <> Field.Value then begin
+                    IsDifferent := true;
+                    break;
+                end;
             end;
-        end;
+
+            if IsDifferent then begin
+                IsSyncing := true;
+
+                // 🔹 Transfer fields except Contact Business Relation
+                SlaveContact.TransferFields(Rec, false);
+                SlaveContact."No." := Rec."No.";
+
+                // 🔹 Recompute Contact Business Relation dynamically from Business Relation table
+                RelCount := 0;
+                SlaveBusRel.ChangeCompany(SlaveCompany.Name);
+                SlaveBusRel.SetRange("Contact No.", SlaveContact."No.");
+
+                if SlaveBusRel.FindSet() then
+                    repeat
+                        // Auto-fill Link to Table based on Business Relation Code
+                        case SlaveBusRel."Business Relation Code" of
+                            'CUS':
+                                SlaveBusRel."Link to Table" := Enum::"Contact Business Relation"::Customer;
+                            'VEN':
+                                SlaveBusRel."Link to Table" := Enum::"Contact Business Relation"::Vendor;
+                        end;
+                        SlaveBusRel.Modify(true);
+
+                        // Add relation to array if not already added
+                        for i := 1 to RelCount do
+                            if Relations[i] = SlaveBusRel."Link to Table" then
+                                break;
+                        if i > RelCount then begin
+                            RelCount += 1;
+                            Relations[RelCount] := SlaveBusRel."Link to Table";
+                        end;
+                    until SlaveBusRel.Next() = 0;
+
+                // 🔹 Determine Contact Business Relation
+                if RelCount = 0 then
+                    NewRelation := Enum::"Contact Business Relation"::None
+                else if RelCount = 1 then
+                    NewRelation := Relations[1]
+                else
+                    NewRelation := Enum::"Contact Business Relation"::Multiple;
+
+                SlaveContact."Contact Business Relation" := NewRelation;
+                SlaveContact.Modify(true);
+
+                IsSyncing := false;
+            end;
+
+        until SlaveCompany.Next() = 0;
     end;
 
-// ===========================================================================================================
+
+    // ===========================================================================================================
 
     [EventSubscriber(ObjectType::Table, Database::Contact, 'OnBeforeDeleteEvent', '', true, true)]
 

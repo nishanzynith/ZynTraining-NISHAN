@@ -96,9 +96,28 @@ pageextension 50105 "Zyn_Contact List Ext" extends "Contact List"
                 end;
 
             }
-
-
         }
+
+        // modify(Customer)
+        // {
+        //     trigger OnBeforeAction()
+        //     var
+        //         SingleInstanceMgt: Codeunit "Single Instance Management";
+        //     begin
+        //         SingleInstanceMgt.SetFromCreateAs();
+        //     end;
+        // }
+ 
+        // modify(Vendor)
+        // {
+        //     trigger OnBeforeAction()
+        //     var
+        //         SingleInstanceMgt: Codeunit "Single Instance Management";
+        //     begin
+        //         SingleInstanceMgt.SetFromCreateAs();
+        //     end;
+        // }
+
     }
     local procedure Contactpage(ContactBusRel: Record "Contact Business Relation")
                 var
@@ -121,7 +140,7 @@ pageextension 50105 "Zyn_Contact List Ext" extends "Contact List"
 
                     Page.RunModal(Page::"Zyn_Filtered Contact List", TempContact);
                 end;
-            
-
 }
+
+
                 
